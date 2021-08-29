@@ -1,7 +1,7 @@
 --------------------------------------------------------------------------------------------
 ----------------------------PRUEBA # 1 - TRAER TODA LA DATA --------------------------------
 --------------------------------------------------------------------------------------------
-
+--esto primeros comandos sirven para ver metricas de desempeño de correr las consultas
 	set statistics time on
 	set statistics io on
 

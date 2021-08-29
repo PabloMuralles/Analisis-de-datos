@@ -23,9 +23,11 @@ GO
 USE Admisiones_DWH
 GO
 
+--crear estos tipos de datos nos ayuda a que si queremos cambiar un tipo de dato por ejemplo un varchar a 1000 solo lo tendriamos que hacer una vez y no ir uno por uno cambiandolo
 --Enteros
  --User Defined Type _ Surrogate Key
-	--Tipo para SK entero: Surrogate Key
+	--Tipo para SK entero: Surrogate Key -> llave primaria que existe solo en el DH
+	-- UDT= user define type
 	CREATE TYPE [UDT_SK] FROM INT
 	GO
 
@@ -54,6 +56,7 @@ GO
 --Decimal
 
 	--Tipo Decimal 6,2
+	-- 6 digitos del lado izquierdo del punto y dos del lado derecho
 	CREATE TYPE [UDT_Decimal6.2] FROM DECIMAL(6,2)
 	GO
 
@@ -66,6 +69,7 @@ GO
 	GO
 
 --Schemas para separar objetos
+--un esquema es una colección de objetos sirve para facilitar la administracion de los objetos
 	CREATE SCHEMA Fact
 	GO
 
@@ -75,20 +79,24 @@ GO
 --------------------------------------------------------------------------------------------
 -------------------------------MODELADO CONCEPTUAL------------------------------------------
 --------------------------------------------------------------------------------------------
+--Donde se define cuales son las dimenciones y cual va ser la tabla de hechos
+--tambien se define si se utiliza el modelo copo de nieve o estrella
+--estrella: las dimensiones carecen de jerarquías
+--copo de nieve: las dimensiones tiene jerarquías
 --Tablas Dimensiones
-
+	--esta dimension siempre debe ir nunca va existir un modelo sin fecha
 	CREATE TABLE Dimension.Fecha
 	(
 		DateKey INT PRIMARY KEY
 	)
 	GO
-
+	-- union entre facultas y carrera
 	CREATE TABLE Dimension.Carrera
 	(
 		SK_Carrera [UDT_SK] PRIMARY KEY IDENTITY
 	)
 	GO
-
+	--union entre diversificado, candidadto y colegio candidato
 	CREATE TABLE Dimension.Candidato
 	(
 		SK_Candidato [UDT_SK] PRIMARY KEY IDENTITY
@@ -96,7 +104,10 @@ GO
 	GO
 
 --Tablas Fact
-
+	--examen se une con examen detalle, descuento y materia
+	-- no es necesario poner las referencias ya que como la data entra al distema en bases de datos relacionales ellas se encargan de la integridad de la informacion
+	--pero si no me afecta en nada ponerlas porque no ponerlas y esto tambien puede ayudar en el caso de que como la data viene de muchas bases de datos 
+	--las otras bases de datos no esten bien hechas y con estas referencias poder captar esos errores y no tener datos sucios
 	CREATE TABLE Fact.Examen
 	(
 		SK_Examen [UDT_SK] PRIMARY KEY IDENTITY,
@@ -106,6 +117,9 @@ GO
 	)
 
 --Metadata
+--definicion datos de los datos
+--sirve cuando las tablas no tienen nombres tan significativos o tambien para cuando no se sabe para que se usa una columna de una tabla
+-- no es necesario pero son mejores practicas
 
 	EXEC sys.sp_addextendedproperty 
      @name = N'Desnormalizacion', 
@@ -147,6 +161,8 @@ GO
 ---------------------------------MODELADO LOGICO--------------------------------------------
 --------------------------------------------------------------------------------------------
 --Transformación en modelo lógico (mas detalles)
+--complementar el diseño que se empezo a crear, asignando los demas atributos y columnas que vienen de la base de datos relasional
+--se elige que trabutos se van a traer puede ser que existan atributos que no sirvan entonces no se traen por ejemplo columnas de cuando se creo el registro
 
 	--Fact
 	ALTER TABLE Fact.Examen ADD ID_Examen [UDT_PK]
@@ -201,6 +217,8 @@ GO
 
 
 --Indices Columnares
+--indices columnares hacen mas eficientes las funciones de agregacion
+--este indice va ayudar para poder hacer el cubo posteriormente ya que el cubo hace un presosamiento de la informacion
 	CREATE NONCLUSTERED COLUMNSTORE INDEX [NCCS-Precio] ON [Fact].[Examen]
 	(
 	   [Precio],
@@ -258,7 +276,7 @@ GO
 --------------------------------------------------------------------------------------------
 -----------------------CORRER CREATE de USP_FillDimDate PRIMERO!!!--------------------------
 --------------------------------------------------------------------------------------------
-
+--ctr + shift + r para refrescar los cambias ya creados como para poder ver el procedimiento creado 
 	DECLARE @FechaMaxima DATETIME=DATEADD(YEAR,2,GETDATE())
 	--Fecha
 	IF ISNULL((SELECT MAX(Date) FROM Dimension.Fecha),'1900-01-01')<@FechaMaxima
