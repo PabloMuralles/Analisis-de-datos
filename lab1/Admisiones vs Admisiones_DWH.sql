@@ -28,6 +28,8 @@
 		from	Admisiones_DWH.Fact.Examen as e inner join
 				Admisiones_DWH.Dimension.Candidato as c on e.SK_Candidato = c.SK_Candidato inner join
 				Admisiones_DWH.Dimension.Carrera as ca on ca.SK_Carrera = e.SK_Carrera inner join
+				Admisiones_DWH.Dimension.Materia as m on m.SK_Materia=e.SK_Materia inner join
+				Admisiones_DWH.Dimension.Descuento as d on d.SK_Descuento=e.SK_Descuento inner join
 				Admisiones_DWH.Dimension.Fecha as f on e.DateKey = f.DateKey
 
 	set statistics time off
@@ -82,8 +84,8 @@
 				C.ApellidoCandidato,
 				c.NombreColegio,
 				c.NombreDiversificado,
-				e.NombreMateria,
-				e.DescripcionDescuento,
+				m.NombreMateria,
+				d.DescriptionDescuento,
 				ca.NombreCarrera,
 				ca.NombreFacultad,
 				SUM(E.Precio) as TOtalPrecio,
@@ -91,14 +93,16 @@
 		from	Admisiones_DWH.Fact.Examen as e inner join
 				Admisiones_DWH.Dimension.Candidato as c on e.SK_Candidato = c.SK_Candidato inner join
 				Admisiones_DWH.Dimension.Carrera as ca on ca.SK_Carrera = e.SK_Carrera inner join
+				Admisiones_DWH.Dimension.Materia as m on m.SK_Materia=e.SK_Materia inner join
+				Admisiones_DWH.Dimension.Descuento as d on d.SK_Descuento=e.SK_Descuento inner join
 				Admisiones_DWH.Dimension.Fecha as f on e.DateKey = f.DateKey
 
 		GROUP BY	C.NombreCandidato,
 					C.ApellidoCandidato,
 					c.NombreColegio,
 					c.NombreDiversificado,
-					e.NombreMateria,
-					e.DescripcionDescuento,
+					m.NombreMateria,
+					d.DescriptionDescuento,
 					ca.NombreFacultad,
 					ca.NombreCarrera
 

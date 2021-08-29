@@ -102,6 +102,17 @@ GO
 		SK_Candidato [UDT_SK] PRIMARY KEY IDENTITY
 	)
 	GO
+	----TAREA
+	CREATE TABLE Dimension.Descuento
+	(
+		SK_Descuento [UDT_SK] PRIMARY KEY IDENTITY
+	)
+	GO
+	CREATE TABLE Dimension.Materia
+	(
+		SK_Materia [UDT_SK] PRIMARY KEY IDENTITY
+	)
+	GO
 
 --Tablas Fact
 	--examen se une con examen detalle, descuento y materia
@@ -113,6 +124,8 @@ GO
 		SK_Examen [UDT_SK] PRIMARY KEY IDENTITY,
 		SK_Candidato [UDT_SK] REFERENCES Dimension.Candidato(SK_Candidato),
 		SK_Carrera [UDT_SK] REFERENCES Dimension.Carrera(SK_Carrera),
+		SK_Descuento [UDT_SK] REFERENCES Dimension.Descuento(SK_Descuento),
+		SK_Materia [UDT_SK] REFERENCES Dimension.Materia(SK_Materia),
 		DateKey INT REFERENCES Dimension.Fecha(DateKey)
 	)
 
@@ -148,9 +161,27 @@ GO
      @level1name = N'Fecha';
 	GO
 
+	EXEC sys.sp_addextendedproperty
+	 @name = N'Desnormalizacion',
+	 @value = N'La dimención de descuento proviene de la tabla descuento para probar que cambia al quitarla de la tabla de hecho',
+	 @level0type = N'SCHEMA',
+	 @level0name= N'Dimension',
+	 @level1type = N'TABLE',
+	 @level1name = N'Descuento';
+	 GO
+
+	 EXEC sys.sp_addextendedproperty
+	 @name = N'Desnormalizacion',
+	 @value = N'La dimención de materia proviene de la tabla materia para probar que cambia al quitarla de la tabla de hecho',
+	 @level0type = N'SCHEMA',
+	 @level0name= N'Dimension',
+	 @level1type = N'TABLE',
+	 @level1name = N'Materia';
+	 GO
+
 	EXEC sys.sp_addextendedproperty 
      @name = N'Desnormalizacion', 
-     @value = N'La tabla de hechos es una union proveniente de las tablas de Examen, Examen Detalle, Descuento y Materia', 
+     @value = N'La tabla de hechos es una union proveniente de las tablas de Examen y Examen Detalle', 
      @level0type = N'SCHEMA', 
      @level0name = N'Fact', 
      @level1type = N'TABLE', 
@@ -166,13 +197,13 @@ GO
 
 	--Fact
 	ALTER TABLE Fact.Examen ADD ID_Examen [UDT_PK]
-	ALTER TABLE Fact.Examen ADD ID_Descuento [UDT_PK]	
-	ALTER TABLE Fact.Examen ADD DescripcionDescuento [UDT_VarcharMediano]
-	ALTER TABLE Fact.Examen ADD PorcentajeDescuento [UDT_Decimal6.2]
+	--ALTER TABLE Fact.Examen ADD ID_Descuento [UDT_PK]	
+	--ALTER TABLE Fact.Examen ADD DescripcionDescuento [UDT_VarcharMediano]
+	--ALTER TABLE Fact.Examen ADD PorcentajeDescuento [UDT_Decimal6.2]
 	ALTER TABLE Fact.Examen ADD Precio [UDT_Decimal6.2]
 	ALTER TABLE Fact.Examen ADD NotaTotal [UDT_Decimal5.2]
 	ALTER TABLE Fact.Examen ADD NotaArea [UDT_Decimal5.2]
-	ALTER TABLE Fact.Examen ADD NombreMateria [UDT_VarcharMediano]
+	--ALTER TABLE Fact.Examen ADD NombreMateria [UDT_VarcharMediano]
 
 	--DimFecha	
 	ALTER TABLE Dimension.Fecha ADD [Date] DATE NOT NULL
@@ -214,6 +245,14 @@ GO
 	ALTER TABLE Dimension.Candidato ADD NombreColegio [UDT_Varcharlargo]
 	ALTER TABLE Dimension.Candidato ADD NombreDiversificado [UDT_Varcharlargo]
 
+	--DimDescuento
+	ALTER TABLE Dimension.Descuento ADD ID_Descuento [UDT_PK]
+	ALTER TABLE Dimension.Descuento ADD DescriptionDescuento [UDT_VarcharMediano]
+	ALTER TABLE Dimension.Descuento ADD PorcentajeDescuento [UDT_Decimal6.2]
+
+	--DimMateria
+	ALTER TABLE Dimension.Materia ADD ID_Materia [UDT_PK]
+	ALTER TABLE Dimension.Materia ADD NombreMateria [UDT_VarcharMediano]
 
 
 --Indices Columnares
@@ -273,6 +312,27 @@ GO
 
 		SELECT * FROM Dimension.Candidato
 
+	--DimDescuento
+	INSERT INTO Dimension.Descuento
+	([ID_Descuento],
+	 [DescriptionDescuento],
+	 [PorcentajeDescuento]
+	)
+	SELECT C.ID_Descuento,
+			C.Descripcion,
+			C.PorcentajeDescuento
+	FROM Admisiones.DBO.Descuento C
+
+	--DimMateria
+
+	INSERT INTO Dimension.Materia
+	([ID_Materia],
+	 [NombreMateria]
+	)
+	SELECT M.ID_Materia,
+			M.NombreMateria
+	FROM Admisiones.DBO.Materia M
+
 --------------------------------------------------------------------------------------------
 -----------------------CORRER CREATE de USP_FillDimDate PRIMERO!!!--------------------------
 --------------------------------------------------------------------------------------------
@@ -292,35 +352,42 @@ GO
 	 [SK_Carrera], 
 	 [DateKey], 
 	 [ID_Examen], 
-	 [ID_Descuento], 	
-	 [DescripcionDescuento], 
-	 [PorcentajeDescuento], 
+	 --[ID_Descuento], 	
+	 --[DescripcionDescuento], 
+	 --[PorcentajeDescuento], 
 	 [Precio], 
 	 [NotaTotal], 
 	 [NotaArea], 
-	 [NombreMateria]
+	 --[NombreMateria]
+	 [SK_Descuento],
+	 [SK_Materia]
 	)
 	SELECT  --Columnas de mis dimensiones en DWH
 			SK_Candidato, 
 			SK_Carrera, 
 			F.DateKey, 
 			R.ID_Examen, 
-			R.ID_Descuento, 			
-			D.Descripcion, 
-			D.PorcentajeDescuento, 
+			--R.ID_Descuento, 			
+			--D.Descripcion, 
+			--D.PorcentajeDescuento, 
 			R.Precio, 
 			R.Nota,
-			RR.NotaArea, 
-			EA.NombreMateria
+			RR.NotaArea,
+			--EA.NombreMateria
+			D.ID_Descuento,
+			M.ID_Materia
+
 				 
 	FROM Admisiones.DBO.Examen R
 		INNER JOIN Admisiones.DBO.Examen_Detalle RR ON(R.ID_Examen = RR.ID_Examen)
-		INNER JOIN Admisiones.DBO.Materia EA ON(EA.ID_Materia = RR.ID_Materia)
-		INNER JOIN Admisiones.DBO.Descuento D ON(D.ID_Descuento = R.ID_Descuento)
+		--INNER JOIN Admisiones.DBO.Materia EA ON(EA.ID_Materia = RR.ID_Materia)
+		--INNER JOIN Admisiones.DBO.Descuento D ON(D.ID_Descuento = R.ID_Descuento)
 		--Referencias a DWH
 		INNER JOIN Dimension.Candidato C ON(C.ID_Candidato = R.ID_Candidato)
 		INNER JOIN Dimension.Carrera CA ON(CA.ID_Carrera = R.ID_Carrera)
-		INNER JOIN Dimension.Fecha F ON(CAST((CAST(YEAR(R.FechaPrueba) AS VARCHAR(4)))+left('0'+CAST(MONTH(R.FechaPrueba) AS VARCHAR(4)),2)+left('0'+(CAST(DAY(R.FechaPrueba) AS VARCHAR(4))),2) AS INT)  = F.DateKey);
+		INNER JOIN Dimension.Fecha F ON(CAST((CAST(YEAR(R.FechaPrueba) AS VARCHAR(4)))+left('0'+CAST(MONTH(R.FechaPrueba) AS VARCHAR(4)),2)+left('0'+(CAST(DAY(R.FechaPrueba) AS VARCHAR(4))),2) AS INT)  = F.DateKey)
+		INNER JOIN Dimension.Descuento D on (D.ID_Descuento = R.ID_Descuento)
+		INNER JOIN Dimension.Materia M on (M.ID_Materia = RR.ID_Materia);
 
 
 --------------------------------------------------------------------------------------------
