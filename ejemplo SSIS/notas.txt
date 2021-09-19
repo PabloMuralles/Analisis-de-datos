@@ -98,6 +98,25 @@ para ejecutar el paquete ya hecho deploy lo buscamos y le damos execute. me abre
 
 pude ser que en ocaciones miremos los reportes y no aparece nada, es un error de la configuracion del paquete y vamos hacer le filtro y le cambiamos la fecha de donde a donde queremos ver los reportes y así se soluciona esto
 
+para ver los procesos corriendo se da click derocho al catalogo y despues active operation entonces salen los ids de los paquetes que estan corriendo esto ayuda por si alguno se esta tardando mucho y se quiere parar y así con el id de ejecucion matarlo
+
+la otra forma de ejecutar paquetes es con tareas calendarizadas que es lo mas comun. esto es con sql server agent. la primera vez va estar desabilitado porque el servicio esta abajo. ir a sql configuration manager y despues en sql services se va encontrar el servicio y se va a las propiedad he hirse al start mode para que se aranque de forma automatica. o tambien en sql ms darle start
+despues vamos a jobs y creamos uno nuevo y le ponemos un nombre
+despues en steps ahí definimos y creamos un nuevo y le colocamos un nombre despues en tipo seleccionamos sql server ssis package
+despues ponemos donde esta nuestro paquete que seria el folder
+despues especificar el nombre del servidor en este caso localhost y selecionamos autenticacion de windows
+despues seleccionamos el paquete que deseamos correr y podemos cambiar configuracion como strings de conexones 
+y así cuantos pasos necesitemos por paquetes
+por ultimo vamos a calendarizarlo->creamos un nuevo calendario 
+podemos poner aletartas o mandar notificaciones por correo a ciertas personas si fallan
+o target es para correr estas tareas colendarizadas en varios servidores
+
+en job activity nos da informacion de todos los jobs
+
+
+
+
+
 
 
 
