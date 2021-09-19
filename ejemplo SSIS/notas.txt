@@ -1,0 +1,111 @@
+proyect params: parametros a nivel del proyecto, esto es bueno usarlos cuando cuando vamos a crear bastantes paquetes, voy a crear varios ETLs y estos los quuiero en distintos paquetes y todos se van a conectar a los mismos destinos o fuentes que van a estar compartiendo los strings de conexion y estos pueden ser estos parametros. Se pueden utilizar en todos los paquetes
+conections managers: donde se pueden crear diferentes conexiones y estas se comparten en todo el proyecto, cuando son compartidas es util ponerlas ahí
+SSIS packages: donde creamos nuiestros paquetes, por default crea un paquete llamado package.dtsx esa es la extension de los paquetes de ssis. Los paquetes deben de tener nombres significativos.
+
+Cuando se crea un paquete o etl nuevo: hay que pensar cual es todo el flujo de mi paquete.
+
+Un paquete es mas que un etl. cada tookbox es un etl separado.
+
+los ssd son los mecanismos para actualizar nuestras dimensiones.
+
+ejemplo de SSIS:
+nuevas columnas:
+SCD 2:inserta una nueva version del registro manteniendo la vieja version de registro, llegamos a tener dos registros y el problema es como saber cual es la nueva. Para esto se implementan campos como fechainciovalidez y fechafinvalidez.
+auditoria:nos ayudan a saber cuando se creo el registros, cuando se actualizo, quien lo actulizo
+linaje: ayudan a identificar de donde viene el registros, que batch o de que sistema proviene.
+
+OLE BD Source:permite conectarnos a un sql server.
+
+las variables de sistemas: ayudan a generar variables de control como las columnas de linaje como el id batch.
+
+columnas derivadas: van a crear nuevas columnas y van hacer las columnas de linaje.
+
+slowly changing dimension:sirve para implemnetar los SCDs.
+
+ETL: extracion, transformacion y carga.
+extracion: implica conectarse a una fuente de datos.
+
+
+tenemos dos flujos:
+control flow:el principal
+data flow: que se crea cuando creamos procesos etl}
+
+Configurando el slwoly changing dimension:
+primero escoger la conexion donde esta la dimension
+despues escoger la diemnsion 
+ver la columnas de input que son las que traemos del dato source
+despues ver las columnas de dimension que son las que tiene creada la dimension
+key type sirve para decirle como va a identificar al registro de forma unica desde la fuente, que es la llave primaria que identifica en el data source cada uno de los registros
+despues seleccionar el tipo de scd que queremos para cada campo
+opciones scd:
+0: atributo fijo que no deberia de cambiar
+1: atributo que cambia y que se sobre escribe si se cambia 
+2: atributo historico que se crea una nueva version del registro
+despues nos dice que si dejamos scd tipo 0 podemos configurar que si cambia alguna columna que no debia de cambiar mostrar un error
+despues nos aparece como vamos a identificar los tipos de scd historiocs tipo 2 para saber cual es la version actual, tenemos dos opciones si tenemos un registro boleano que nos dice cual es activo o la otra que si tenemos una fecha inicio y fin, ahora bien si usamos lo segundo nos pide poner que variable de sistema vamos a usar para asignarle un valor de la fecha.
+Opciones:
+1: como estamo dendro de un contenedor tenemos la variable start tieme que significa en que momento se empezo a ejecuta las tareas del contenedor
+2: creation date-fecha de creacion es la fecha de creacion de la variable del sistema
+3: start time: fecha en que se inicio la a correr el paquete.
+el inge seleccion start time.
+Para terminas nos pregunta si tenemos columnas inferidas 
+
+Flecha roja que esta adentro de los data flow task: esto sirve si pasa algun error que hacer cuando sucede algun error
+
+Para las tablas de dimensiones los scds hacen la tarea y son bastante eficiente encambio la tabla fact si es recomendable hacerle una tabla de staging
+
+crear variables de paquete: click derecho variables
+creamos una y despues se la asignamos al execute task en la propiedad de result set.
+mas usadas single row:solo se trae un unico registros y un full resulset en este caso se guarda en una tabla como por ejemplo listado de clientes
+despues ir a resulset para poder hacer el mapeo hay que ir a resul set de la izquierda el result name se deja en 0 eso significa que es cualquier nombre y despues en que variable se va a guardar
+
+mapeo de parametros en olb source irse a parameters para el primero poner 0 y para el segundo 1 poner la variable de sistema que se creo 
+
+verificar siempre que el mapeo de las columnas de lo que traemos haga match con lo que llevamos ya que el match lo hace por el nombre y si es distinto lo va ingnorar
+
+notas: cuando corremos los paquetes de dimensiones va realizar las cargas por lo que los registros su fecha de validez le va poner la fecha de cuando se corrio el paquete esto lo que genera es que la fecha validez inicio sea distinto a la fecha de creacion, nos va a perjudicar ya que a la hora de hacer la carga de el fact examen el wizard toma todo como que es nuevo y no hay ningun cambio a tomar, esto solo va suceder si es la primera carga y tenemos data mas vieja por lo que lo aconsejable es cambiar todos los registos de las dimensiones a fechas mas viejas con un update
+
+ssis= las variables de fecha ejecucion del paquete solo almacena horas y minutos por lo que es un punto en contra y puede existir casos donde esto pueda afectar,carece de mas precision
+
+agregar otra fuente como por ejemplo un archivo csv, nos metemos en el en el data task y seleccionamos, le damos nueva coneccion le ponemos un nombre significativo y despues seleccionamos el pad de donde se encuentra el documento, podemos ver que columnas tiene en columns y en advance para cambiar un tipo de dato ya que todo lo jala como string de 50 por lo que si son otros tipos se pueden cambiar
+
+Cuando traemos data de un archivo cvs pero no tenemos lo ids por ejemplo, podemos usasr la herramienta lookup, debemos de ponerle un nombre significativo como siempre. Cuando lo configuramos es lo vamos a dejar como full cache esto va depende si es mucho data la que vamos a traer si puede tener efectos en el performance. Teniendo en cuenta que siempre es mas eficiente cuando se hace en cache.
+Despues configuramos que cuando no encuentre un match haga un redirected rows que no hagan match a otro output diferente
+despues nos vamos a connection en esta seleccionamos la tabla de donde vamos a ir a traer el dato que necesitamos
+despues tenemos que unir el campo que tenemos y el que esta en la otra tabla para poder encontrar el valor que estamos buscando 
+por ultimo seleccionamos el dato que necesitamos 
+ya para terminar los lookup nos van a decir cual es el output que queremos para que sea el input de otro cosa entonces seleccionamos el output que es d el los que hicerion match
+
+para unir dos fuentes se utiliza: union all, une dos data set. Despues tenemos que hacer match las entradas
+
+Cuando tenemos problemas de tipos podemos usar las derived columns para convertir el tipo origal al que deceseamos agregando una nueva columna. (DT_I4)-> entero de 4 bits
+
+hacer deployed en el servidor. en sql server en la carpeta integretion services catalogs, ahí se hace deployed de los paquetes de SSIS, para que todos los proyectos de SSIS llegen a almacenarse en el servidor de sql. Cuando creamos este catalaogo va crear un base de datos y esta va almacenar toda la metadata y la definicion del paquete.
+De primero debemos dar click derecho y crear un nuevo catalogo y abre un menu
+se habilita el crl integration->son librerias
+el checkbox que le sigue lo podemos seleccionar y hace que ejecuta un servicio de ssis que se arranque cuando se arranque la base de dato y es bueno porque sino despues lo tenemos que arrancar manual->como crea una base de datos la incripta y debemos de meter la contraseña la que queramos
+el ultimo checkbox no lo seleccionamos pero sirve para cuando tenemos cluster y esto valancea los clusters (similar)
+despues de crear el catalgo debemos de crear folderes esto almacenar los distintos proyectos de ssis en estos foldes especificos es donde haremos el deployed
+tambien podemos crear ambientes que son muy utilies, si tenemos muchos ambientes como de desarrollo,calidad y produccion. esto ayuda a gestionar los valores de los parametros dependiendo del ambiente por ejemplo los strings de conexion porque se pueden conectar al de proudccion al de desarrollo etc
+
+deployed: verificar que en las propiedades del proyecto haga match del sql server instalado y usado en visual studio 
+despues click derecho en deploy y despues va aparecer un wizard
+seleccionamos donde queremos hacer deploy en este caso seria sql server local
+colocamos el nombre de la instancia de donde queremos hacer deploy(localhost) y seleccionamos el metodo de autenticacion (windows)
+por ultimo seleccionamos el folder donde queremos hacerlo en este caso seria el que hicmos con anteriorirdad
+
+para ejecutar el paquete ya hecho deploy lo buscamos y le damos execute. me abre un wizard donde podemos cambiar los parametros como por ejemplo los strings de conexion. para ver los reports click derecho reports despues all standarst reports y all executions
+
+pude ser que en ocaciones miremos los reportes y no aparece nada, es un error de la configuracion del paquete y vamos hacer le filtro y le cambiamos la fecha de donde a donde queremos ver los reportes y así se soluciona esto
+
+
+
+
+
+
+
+
+
+
+
+
