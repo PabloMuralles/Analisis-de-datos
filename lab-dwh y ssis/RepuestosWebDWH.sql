@@ -207,8 +207,8 @@ alter table Dimension.Partes add UsuarioCreacion nvarchar(100) not null default(
 alter table Dimension.Partes add FechaModificacion [UDT_DateTime]
 alter table Dimension.Partes add UsuarioModificacion nvarchar(100) null
 --columnas de linaje
-alter table Dimension.Partes add ID_Batch uniqueidentifier null
-alter table Dimension.Partes add ID_SourceSystem varchar(50)
+--alter table Dimension.Partes add ID_Batch uniqueidentifier null
+--alter table Dimension.Partes add ID_SourceSystem varchar(50)
 -------------------------------------------------------------------------------------------------------
 --Dimension Geografia Integrará País, Region y Ciudad
 alter table Dimension.Geografia add ID_Pais [UDT_PK]  
@@ -227,8 +227,8 @@ alter table Dimension.Geografia add UsuarioCreacion nvarchar(100) not null defau
 alter table Dimension.Geografia add FechaModificacion [UDT_DateTime]
 alter table Dimension.Geografia add UsuarioModificacion nvarchar(100) null
 --columnas de linaje
-alter table Dimension.Geografia add ID_Batch uniqueidentifier null
-alter table Dimension.Geografia add ID_SourceSystem varchar(50)
+--alter table Dimension.Geografia add ID_Batch uniqueidentifier null
+--alter table Dimension.Geografia add ID_SourceSystem varchar(50)
 -------------------------------------------------------------------------------------------------------
 --Dimension clientes
 alter table Dimension.Clientes add ID_Cliente [UDT_PK]
@@ -248,8 +248,8 @@ alter table Dimension.Clientes add UsuarioCreacion nvarchar(100) not null defaul
 alter table Dimension.Clientes add FechaModificacion [UDT_DateTime]
 alter table Dimension.Clientes add UsuarioModificacion nvarchar(100) null
 --columnas de linaje
-alter table Dimension.Clientes add ID_Batch uniqueidentifier null
-alter table Dimension.Clientes add ID_SourceSystem varchar(50)
+--alter table Dimension.Clientes add ID_Batch uniqueidentifier null
+--alter table Dimension.Clientes add ID_SourceSystem varchar(50)
 -------------------------------------------------------------------------------------------------------
 --Dimensino Fecha	
 alter table Dimension.Fecha add [Date] DATE NOT NULL

@@ -108,3 +108,5 @@ begin
 	EXEC USP_FillDimDate @CurrentDate = '2016-01-01', 
 							@EndDate     = @FechaMaxima
 end
+
+truncate table Dimension.Fecha

@@ -11,8 +11,8 @@
   DTS:LocaleID="22538"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{3A57C5B2-8208-45E3-A592-95E3FA47806C}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{04241DE4-D5E7-43D9-8045-0A121F8DE9A3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -835,20 +835,6 @@ from dbo.Clientes C</property>
                           cachedName="UsuarioModificacion"
                           externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[UsuarioModificacion]"
                           lineageId="Package\Carga de Dimensiones\Dimension Clientes\Union All.Outputs[Union All Output 1].Columns[UsuarioModificacion]" />
-                        <inputColumn
-                          refId="Package\Carga de Dimensiones\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].Columns[ID_Batch]"
-                          cachedDataType="guid"
-                          cachedName="ID_Batch"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Batch]"
-                          lineageId="Package\Carga de Dimensiones\Dimension Clientes\Union All.Outputs[Union All Output 1].Columns[ID_Batch]" />
-                        <inputColumn
-                          refId="Package\Carga de Dimensiones\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].Columns[ID_SourceSystem]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="ID_SourceSystem"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_SourceSystem]"
-                          lineageId="Package\Carga de Dimensiones\Dimension Clientes\Union All.Outputs[Union All Output 1].Columns[ID_SourceSystem]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -926,16 +912,6 @@ from dbo.Clientes C</property>
                           dataType="wstr"
                           length="100"
                           name="UsuarioModificacion" />
-                        <externalMetadataColumn
-                          refId="Package\Carga de Dimensiones\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Batch]"
-                          dataType="guid"
-                          name="ID_Batch" />
-                        <externalMetadataColumn
-                          refId="Package\Carga de Dimensiones\Dimension Clientes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_SourceSystem]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="ID_SourceSystem" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -1094,7 +1070,7 @@ from dbo.Clientes C</property>
                       description="The SQL command to be executed."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [Dimension].[Clientes] SET [FechaCreacion] = ?,[FechaModificacion] = ?,[Genero] = ?,[ID_Batch] = ?,[ID_SourceSystem] = ?,[PrimerApellido] = ?,[PrimerNombre] = ?,[SegundoApellido] = ?,[SegundoNombre] = ?,[UsuarioCreacion] = ?,[UsuarioModificacion] = ? WHERE [ID_Cliente] = ? AND [FechaFinValidez] IS NULL</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [Dimension].[Clientes] SET [FechaCreacion] = ?,[FechaModificacion] = ?,[Genero] = ?,[PrimerApellido] = ?,[PrimerNombre] = ?,[SegundoApellido] = ?,[SegundoNombre] = ?,[UsuarioCreacion] = ?,[UsuarioModificacion] = ? WHERE [ID_Cliente] = ? AND [FechaFinValidez] IS NULL</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1137,32 +1113,18 @@ from dbo.Clientes C</property>
                           externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                           lineageId="Package\Carga de Dimensiones\Dimension Clientes\Fuente Cliente.Outputs[OLE DB Source Output].Columns[Genero]" />
                         <inputColumn
-                          refId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ID_Batch]"
-                          cachedDataType="guid"
-                          cachedName="ID_Batch"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                          lineageId="Package\Carga de Dimensiones\Dimension Clientes\Derived Column.Outputs[Derived Column Output].Columns[ID_Batch]" />
-                        <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ID_Cliente]"
                           cachedDataType="i4"
                           cachedName="ID_Cliente"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
                           lineageId="Package\Carga de Dimensiones\Dimension Clientes\Fuente Cliente.Outputs[OLE DB Source Output].Columns[ID_Cliente]" />
-                        <inputColumn
-                          refId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ID_SourceSystem]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="ID_SourceSystem"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                          lineageId="Package\Carga de Dimensiones\Dimension Clientes\Derived Column.Outputs[Derived Column Output].Columns[ID_SourceSystem]" />
                         <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[PrimerApellidO]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="100"
                           cachedName="PrimerApellidO"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                           lineageId="Package\Carga de Dimensiones\Dimension Clientes\Fuente Cliente.Outputs[OLE DB Source Output].Columns[PrimerApellidO]" />
                         <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[PrimerNombre]"
@@ -1170,7 +1132,7 @@ from dbo.Clientes C</property>
                           cachedDataType="str"
                           cachedLength="100"
                           cachedName="PrimerNombre"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                           lineageId="Package\Carga de Dimensiones\Dimension Clientes\Fuente Cliente.Outputs[OLE DB Source Output].Columns[PrimerNombre]" />
                         <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[SegundoApellido]"
@@ -1178,7 +1140,7 @@ from dbo.Clientes C</property>
                           cachedDataType="str"
                           cachedLength="100"
                           cachedName="SegundoApellido"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                           lineageId="Package\Carga de Dimensiones\Dimension Clientes\Fuente Cliente.Outputs[OLE DB Source Output].Columns[SegundoApellido]" />
                         <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[SegundoNombre]"
@@ -1186,21 +1148,21 @@ from dbo.Clientes C</property>
                           cachedDataType="str"
                           cachedLength="100"
                           cachedName="SegundoNombre"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
                           lineageId="Package\Carga de Dimensiones\Dimension Clientes\Fuente Cliente.Outputs[OLE DB Source Output].Columns[SegundoNombre]" />
                         <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[UsuarioCreacion]"
                           cachedDataType="wstr"
                           cachedLength="100"
                           cachedName="UsuarioCreacion"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
                           lineageId="Package\Carga de Dimensiones\Dimension Clientes\Fuente Cliente.Outputs[OLE DB Source Output].Columns[UsuarioCreacion]" />
                         <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[UsuarioModificacion]"
                           cachedDataType="wstr"
                           cachedLength="100"
                           cachedName="UsuarioModificacion"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
                           lineageId="Package\Carga de Dimensiones\Dimension Clientes\Fuente Cliente.Outputs[OLE DB Source Output].Columns[UsuarioModificacion]" />
                       </inputColumns>
                       <externalMetadataColumns
@@ -1242,7 +1204,9 @@ from dbo.Clientes C</property>
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                          dataType="guid"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
                           name="Param_3">
                           <properties>
                             <property
@@ -1255,7 +1219,7 @@ from dbo.Clientes C</property>
                           refId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="100"
                           name="Param_4">
                           <properties>
                             <property
@@ -1292,8 +1256,7 @@ from dbo.Clientes C</property>
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="100"
                           name="Param_7">
                           <properties>
@@ -1305,8 +1268,7 @@ from dbo.Clientes C</property>
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="100"
                           name="Param_8">
                           <properties>
@@ -1318,32 +1280,8 @@ from dbo.Clientes C</property>
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
-                          dataType="wstr"
-                          length="100"
-                          name="Param_9">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
-                          dataType="wstr"
-                          length="100"
-                          name="Param_10">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Carga de Dimensiones\Dimension Clientes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
                           dataType="i4"
-                          name="Param_11">
+                          name="Param_9">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -1398,7 +1336,7 @@ from dbo.Clientes C</property>
                       dataType="System.String"
                       description="Specifies the SELECT statement used to create a schema rowset."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Correo_Electronico], [FechaCreacion], [FechaModificacion], [FechaNacimiento], [Genero], [ID_Batch], [ID_Cliente], [ID_SourceSystem], [PrimerApellido], [PrimerNombre], [SegundoApellido], [SegundoNombre], [UsuarioCreacion], [UsuarioModificacion],[FechaInicioValidez],[FechaFinValidez] FROM [Dimension].[Clientes]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Correo_Electronico], [FechaCreacion], [FechaModificacion], [FechaNacimiento], [Genero], [ID_Cliente], [PrimerApellido], [PrimerNombre], [SegundoApellido], [SegundoNombre], [UsuarioCreacion], [UsuarioModificacion],[FechaInicioValidez],[FechaFinValidez] FROM [Dimension].[Clientes]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -1516,19 +1454,6 @@ from dbo.Clientes C</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Carga de Dimensiones\Dimension Clientes\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[ID_Batch]"
-                          cachedDataType="guid"
-                          cachedName="ID_Batch"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Clientes\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ID_Batch]"
-                          lineageId="Package\Carga de Dimensiones\Dimension Clientes\Derived Column.Outputs[Derived Column Output].Columns[ID_Batch]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              name="ColumnType"
-                              typeConverter="ColumnType">2</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Clientes\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[ID_Cliente]"
                           cachedDataType="i4"
                           cachedName="ID_Cliente"
@@ -1539,21 +1464,6 @@ from dbo.Clientes C</property>
                               dataType="System.Int32"
                               name="ColumnType"
                               typeConverter="ColumnType">1</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Carga de Dimensiones\Dimension Clientes\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[ID_SourceSystem]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="ID_SourceSystem"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Clientes\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ID_SourceSystem]"
-                          lineageId="Package\Carga de Dimensiones\Dimension Clientes\Derived Column.Outputs[Derived Column Output].Columns[ID_SourceSystem]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              name="ColumnType"
-                              typeConverter="ColumnType">2</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -1672,19 +1582,9 @@ from dbo.Clientes C</property>
                           length="1"
                           name="Genero" />
                         <externalMetadataColumn
-                          refId="Package\Carga de Dimensiones\Dimension Clientes\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ID_Batch]"
-                          dataType="guid"
-                          name="ID_Batch" />
-                        <externalMetadataColumn
                           refId="Package\Carga de Dimensiones\Dimension Clientes\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ID_Cliente]"
                           dataType="i4"
                           name="ID_Cliente" />
-                        <externalMetadataColumn
-                          refId="Package\Carga de Dimensiones\Dimension Clientes\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ID_SourceSystem]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="ID_SourceSystem" />
                         <externalMetadataColumn
                           refId="Package\Carga de Dimensiones\Dimension Clientes\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[PrimerApellido]"
                           codePage="1252"
@@ -2369,7 +2269,7 @@ from dbo.Clientes C</property>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{DA43E185-DCC1-447B-BED8-ECB2B2D21DD8}"
-              SQLTask:SqlStatementSource="USP_FillDimDate" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="DECLARE @FechaMaxima DATETIME=DATEADD(YEAR,2,GETDATE())&#xA;--Fecha&#xA;IF ISNULL((SELECT MAX(Date) FROM Dimension.Fecha),'1900-01-01')&lt;@FechaMaxima&#xA;begin&#xA;&#x9;EXEC USP_FillDimDate @CurrentDate = '2016-01-01', &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;@EndDate     = @FechaMaxima&#xA;end" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -3034,6 +2934,18 @@ inner join dbo.Ciudad C on (R.ID_Region=C.ID_Region)</property>
                           externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Pais]"
                           lineageId="Package\Carga de Dimensiones\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[ID_Pais]" />
                         <inputColumn
+                          refId="Package\Carga de Dimensiones\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].Columns[ID_Region]"
+                          cachedDataType="i4"
+                          cachedName="ID_Region"
+                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Region]"
+                          lineageId="Package\Carga de Dimensiones\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[ID_Region]" />
+                        <inputColumn
+                          refId="Package\Carga de Dimensiones\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].Columns[ID_Ciudad]"
+                          cachedDataType="i4"
+                          cachedName="ID_Ciudad"
+                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Ciudad]"
+                          lineageId="Package\Carga de Dimensiones\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[ID_Ciudad]" />
+                        <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].Columns[NombrePais]"
                           cachedCodepage="1252"
                           cachedDataType="str"
@@ -3042,12 +2954,6 @@ inner join dbo.Ciudad C on (R.ID_Region=C.ID_Region)</property>
                           externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[NombrePais]"
                           lineageId="Package\Carga de Dimensiones\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[NombrePais]" />
                         <inputColumn
-                          refId="Package\Carga de Dimensiones\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].Columns[ID_Region]"
-                          cachedDataType="i4"
-                          cachedName="ID_Region"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Region]"
-                          lineageId="Package\Carga de Dimensiones\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[ID_Region]" />
-                        <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].Columns[NombreRegion]"
                           cachedCodepage="1252"
                           cachedDataType="str"
@@ -3055,12 +2961,6 @@ inner join dbo.Ciudad C on (R.ID_Region=C.ID_Region)</property>
                           cachedName="NombreRegion"
                           externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[NombreRegion]"
                           lineageId="Package\Carga de Dimensiones\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[NombreRegion]" />
-                        <inputColumn
-                          refId="Package\Carga de Dimensiones\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].Columns[ID_Ciudad]"
-                          cachedDataType="i4"
-                          cachedName="ID_Ciudad"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Ciudad]"
-                          lineageId="Package\Carga de Dimensiones\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[ID_Ciudad]" />
                         <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].Columns[NombreCiudad]"
                           cachedCodepage="1252"
@@ -3107,20 +3007,6 @@ inner join dbo.Ciudad C on (R.ID_Region=C.ID_Region)</property>
                           cachedName="UsuarioModificacion"
                           externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[UsuarioModificacion]"
                           lineageId="Package\Carga de Dimensiones\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[UsuarioModificacion]" />
-                        <inputColumn
-                          refId="Package\Carga de Dimensiones\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].Columns[ID_Batch]"
-                          cachedDataType="guid"
-                          cachedName="ID_Batch"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Batch]"
-                          lineageId="Package\Carga de Dimensiones\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[ID_Batch]" />
-                        <inputColumn
-                          refId="Package\Carga de Dimensiones\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].Columns[ID_SourceSystem]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="ID_SourceSystem"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_SourceSystem]"
-                          lineageId="Package\Carga de Dimensiones\Dimension Geografia\Union All.Outputs[Union All Output 1].Columns[ID_SourceSystem]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3133,25 +3019,25 @@ inner join dbo.Ciudad C on (R.ID_Region=C.ID_Region)</property>
                           dataType="i4"
                           name="ID_Pais" />
                         <externalMetadataColumn
+                          refId="Package\Carga de Dimensiones\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Region]"
+                          dataType="i4"
+                          name="ID_Region" />
+                        <externalMetadataColumn
+                          refId="Package\Carga de Dimensiones\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Ciudad]"
+                          dataType="i4"
+                          name="ID_Ciudad" />
+                        <externalMetadataColumn
                           refId="Package\Carga de Dimensiones\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[NombrePais]"
                           codePage="1252"
                           dataType="str"
                           length="100"
                           name="NombrePais" />
                         <externalMetadataColumn
-                          refId="Package\Carga de Dimensiones\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Region]"
-                          dataType="i4"
-                          name="ID_Region" />
-                        <externalMetadataColumn
                           refId="Package\Carga de Dimensiones\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[NombreRegion]"
                           codePage="1252"
                           dataType="str"
                           length="100"
                           name="NombreRegion" />
-                        <externalMetadataColumn
-                          refId="Package\Carga de Dimensiones\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Ciudad]"
-                          dataType="i4"
-                          name="ID_Ciudad" />
                         <externalMetadataColumn
                           refId="Package\Carga de Dimensiones\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[NombreCiudad]"
                           codePage="1252"
@@ -3188,16 +3074,6 @@ inner join dbo.Ciudad C on (R.ID_Region=C.ID_Region)</property>
                           dataType="wstr"
                           length="100"
                           name="UsuarioModificacion" />
-                        <externalMetadataColumn
-                          refId="Package\Carga de Dimensiones\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Batch]"
-                          dataType="guid"
-                          name="ID_Batch" />
-                        <externalMetadataColumn
-                          refId="Package\Carga de Dimensiones\Dimension Geografia\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_SourceSystem]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="ID_SourceSystem" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -3356,7 +3232,7 @@ inner join dbo.Ciudad C on (R.ID_Region=C.ID_Region)</property>
                       description="The SQL command to be executed."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [Dimension].[Geografia] SET [FechaCreacion] = ?,[FechaModificacion] = ?,[ID_Batch] = ?,[ID_Pais] = ?,[ID_Region] = ?,[ID_SourceSystem] = ?,[NombreCiudad] = ?,[NombrePais] = ?,[NombreRegion] = ?,[UsuarioCreacion] = ?,[UsuarioModificacion] = ? WHERE [ID_Ciudad] = ? AND [FechaFinValidez] IS NULL</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [Dimension].[Geografia] SET [FechaCreacion] = ?,[FechaModificacion] = ?,[ID_Pais] = ?,[ID_Region] = ?,[NombreCiudad] = ?,[NombrePais] = ?,[NombreRegion] = ?,[UsuarioCreacion] = ?,[UsuarioModificacion] = ? WHERE [ID_Ciudad] = ? AND [FechaFinValidez] IS NULL</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3391,44 +3267,30 @@ inner join dbo.Ciudad C on (R.ID_Region=C.ID_Region)</property>
                           externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                           lineageId="Package\Carga de Dimensiones\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[FechaModificacion]" />
                         <inputColumn
-                          refId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ID_Batch]"
-                          cachedDataType="guid"
-                          cachedName="ID_Batch"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                          lineageId="Package\Carga de Dimensiones\Dimension Geografia\Derived Column.Outputs[Derived Column Output].Columns[ID_Batch]" />
-                        <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ID_Ciudad]"
                           cachedDataType="i4"
                           cachedName="ID_Ciudad"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
                           lineageId="Package\Carga de Dimensiones\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[ID_Ciudad]" />
                         <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ID_Pais]"
                           cachedDataType="i4"
                           cachedName="ID_Pais"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                           lineageId="Package\Carga de Dimensiones\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[ID_Pais]" />
                         <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ID_Region]"
                           cachedDataType="i4"
                           cachedName="ID_Region"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                           lineageId="Package\Carga de Dimensiones\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[ID_Region]" />
-                        <inputColumn
-                          refId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ID_SourceSystem]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="ID_SourceSystem"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                          lineageId="Package\Carga de Dimensiones\Dimension Geografia\Derived Column.Outputs[Derived Column Output].Columns[ID_SourceSystem]" />
                         <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[NombreCiudad]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="100"
                           cachedName="NombreCiudad"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                           lineageId="Package\Carga de Dimensiones\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[NombreCiudad]" />
                         <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[NombrePais]"
@@ -3436,7 +3298,7 @@ inner join dbo.Ciudad C on (R.ID_Region=C.ID_Region)</property>
                           cachedDataType="str"
                           cachedLength="100"
                           cachedName="NombrePais"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                           lineageId="Package\Carga de Dimensiones\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[NombrePais]" />
                         <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[NombreRegion]"
@@ -3444,21 +3306,21 @@ inner join dbo.Ciudad C on (R.ID_Region=C.ID_Region)</property>
                           cachedDataType="str"
                           cachedLength="100"
                           cachedName="NombreRegion"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
                           lineageId="Package\Carga de Dimensiones\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[NombreRegion]" />
                         <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[UsuarioCreacion]"
                           cachedDataType="wstr"
                           cachedLength="100"
                           cachedName="UsuarioCreacion"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
                           lineageId="Package\Carga de Dimensiones\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[UsuarioCreacion]" />
                         <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[UsuarioModificacion]"
                           cachedDataType="wstr"
                           cachedLength="100"
                           cachedName="UsuarioModificacion"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
                           lineageId="Package\Carga de Dimensiones\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[UsuarioModificacion]" />
                       </inputColumns>
                       <externalMetadataColumns
@@ -3487,13 +3349,13 @@ inner join dbo.Ciudad C on (R.ID_Region=C.ID_Region)</property>
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                          dataType="guid"
+                          dataType="i4"
                           name="Param_2">
                           <properties>
                             <property
                               dataType="System.Int32"
                               description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
+                              name="DBParamInfoFlags">81</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
@@ -3509,20 +3371,22 @@ inner join dbo.Ciudad C on (R.ID_Region=C.ID_Region)</property>
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
                           name="Param_4">
                           <properties>
                             <property
                               dataType="System.Int32"
                               description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
+                              name="DBParamInfoFlags">65</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="100"
                           name="Param_5">
                           <properties>
                             <property
@@ -3546,8 +3410,7 @@ inner join dbo.Ciudad C on (R.ID_Region=C.ID_Region)</property>
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="100"
                           name="Param_7">
                           <properties>
@@ -3559,8 +3422,7 @@ inner join dbo.Ciudad C on (R.ID_Region=C.ID_Region)</property>
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="100"
                           name="Param_8">
                           <properties>
@@ -3572,32 +3434,8 @@ inner join dbo.Ciudad C on (R.ID_Region=C.ID_Region)</property>
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
-                          dataType="wstr"
-                          length="100"
-                          name="Param_9">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
-                          dataType="wstr"
-                          length="100"
-                          name="Param_10">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Carga de Dimensiones\Dimension Geografia\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
                           dataType="i4"
-                          name="Param_11">
+                          name="Param_9">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -3652,7 +3490,7 @@ inner join dbo.Ciudad C on (R.ID_Region=C.ID_Region)</property>
                       dataType="System.String"
                       description="Specifies the SELECT statement used to create a schema rowset."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [CodigoPostal], [FechaCreacion], [FechaModificacion], [ID_Batch], [ID_Ciudad], [ID_Pais], [ID_Region], [ID_SourceSystem], [NombreCiudad], [NombrePais], [NombreRegion], [UsuarioCreacion], [UsuarioModificacion],[FechaInicioValidez],[FechaFinValidez] FROM [Dimension].[Geografia]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [CodigoPostal], [FechaCreacion], [FechaModificacion], [ID_Ciudad], [ID_Pais], [ID_Region], [NombreCiudad], [NombrePais], [NombreRegion], [UsuarioCreacion], [UsuarioModificacion],[FechaInicioValidez],[FechaFinValidez] FROM [Dimension].[Geografia]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -3740,19 +3578,6 @@ inner join dbo.Ciudad C on (R.ID_Region=C.ID_Region)</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Carga de Dimensiones\Dimension Geografia\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[ID_Batch]"
-                          cachedDataType="guid"
-                          cachedName="ID_Batch"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ID_Batch]"
-                          lineageId="Package\Carga de Dimensiones\Dimension Geografia\Derived Column.Outputs[Derived Column Output].Columns[ID_Batch]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              name="ColumnType"
-                              typeConverter="ColumnType">2</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Geografia\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[ID_Ciudad]"
                           cachedDataType="i4"
                           cachedName="ID_Ciudad"
@@ -3784,21 +3609,6 @@ inner join dbo.Ciudad C on (R.ID_Region=C.ID_Region)</property>
                           cachedName="ID_Region"
                           externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ID_Region]"
                           lineageId="Package\Carga de Dimensiones\Dimension Geografia\Fuente Geografia.Outputs[OLE DB Source Output].Columns[ID_Region]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              name="ColumnType"
-                              typeConverter="ColumnType">2</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Carga de Dimensiones\Dimension Geografia\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[ID_SourceSystem]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="ID_SourceSystem"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Geografia\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ID_SourceSystem]"
-                          lineageId="Package\Carga de Dimensiones\Dimension Geografia\Derived Column.Outputs[Derived Column Output].Columns[ID_SourceSystem]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -3895,10 +3705,6 @@ inner join dbo.Ciudad C on (R.ID_Region=C.ID_Region)</property>
                           dataType="dbTimeStamp"
                           name="FechaModificacion" />
                         <externalMetadataColumn
-                          refId="Package\Carga de Dimensiones\Dimension Geografia\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ID_Batch]"
-                          dataType="guid"
-                          name="ID_Batch" />
-                        <externalMetadataColumn
                           refId="Package\Carga de Dimensiones\Dimension Geografia\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ID_Ciudad]"
                           dataType="i4"
                           name="ID_Ciudad" />
@@ -3910,12 +3716,6 @@ inner join dbo.Ciudad C on (R.ID_Region=C.ID_Region)</property>
                           refId="Package\Carga de Dimensiones\Dimension Geografia\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ID_Region]"
                           dataType="i4"
                           name="ID_Region" />
-                        <externalMetadataColumn
-                          refId="Package\Carga de Dimensiones\Dimension Geografia\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ID_SourceSystem]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="ID_SourceSystem" />
                         <externalMetadataColumn
                           refId="Package\Carga de Dimensiones\Dimension Geografia\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[NombreCiudad]"
                           codePage="1252"
@@ -5310,22 +5110,6 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
                           externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Partes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[PrecioParte]"
                           lineageId="Package\Carga de Dimensiones\Dimension Partes\Union All.Outputs[Union All Output 1].Columns[PrecioParte]" />
                         <inputColumn
-                          refId="Package\Carga de Dimensiones\Dimension Partes\Insert Destination.Inputs[OLE DB Destination Input].Columns[NombreLinea]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="100"
-                          cachedName="NombreLinea"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Partes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[NombreLinea]"
-                          lineageId="Package\Carga de Dimensiones\Dimension Partes\Union All.Outputs[Union All Output 1].Columns[NombreLinea]" />
-                        <inputColumn
-                          refId="Package\Carga de Dimensiones\Dimension Partes\Insert Destination.Inputs[OLE DB Destination Input].Columns[DescripcionLinea]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="500"
-                          cachedName="DescripcionLinea"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Partes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[DescripcionLinea]"
-                          lineageId="Package\Carga de Dimensiones\Dimension Partes\Union All.Outputs[Union All Output 1].Columns[DescripcionLinea]" />
-                        <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Partes\Insert Destination.Inputs[OLE DB Destination Input].Columns[NombreCategoria]"
                           cachedCodepage="1252"
                           cachedDataType="str"
@@ -5341,6 +5125,22 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
                           cachedName="DescripcionCategoria"
                           externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Partes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[DescripcionCategoria]"
                           lineageId="Package\Carga de Dimensiones\Dimension Partes\Union All.Outputs[Union All Output 1].Columns[DescripcionCategoria]" />
+                        <inputColumn
+                          refId="Package\Carga de Dimensiones\Dimension Partes\Insert Destination.Inputs[OLE DB Destination Input].Columns[NombreLinea]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="NombreLinea"
+                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Partes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[NombreLinea]"
+                          lineageId="Package\Carga de Dimensiones\Dimension Partes\Union All.Outputs[Union All Output 1].Columns[NombreLinea]" />
+                        <inputColumn
+                          refId="Package\Carga de Dimensiones\Dimension Partes\Insert Destination.Inputs[OLE DB Destination Input].Columns[DescripcionLinea]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="500"
+                          cachedName="DescripcionLinea"
+                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Partes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[DescripcionLinea]"
+                          lineageId="Package\Carga de Dimensiones\Dimension Partes\Union All.Outputs[Union All Output 1].Columns[DescripcionLinea]" />
                         <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Partes\Insert Destination.Inputs[OLE DB Destination Input].Columns[FechaInicioValidez]"
                           cachedDataType="dbTimeStamp"
@@ -5373,20 +5173,6 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
                           cachedName="UsuarioModificacion"
                           externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Partes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[UsuarioModificacion]"
                           lineageId="Package\Carga de Dimensiones\Dimension Partes\Union All.Outputs[Union All Output 1].Columns[UsuarioModificacion]" />
-                        <inputColumn
-                          refId="Package\Carga de Dimensiones\Dimension Partes\Insert Destination.Inputs[OLE DB Destination Input].Columns[ID_Batch]"
-                          cachedDataType="guid"
-                          cachedName="ID_Batch"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Partes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Batch]"
-                          lineageId="Package\Carga de Dimensiones\Dimension Partes\Union All.Outputs[Union All Output 1].Columns[ID_Batch]" />
-                        <inputColumn
-                          refId="Package\Carga de Dimensiones\Dimension Partes\Insert Destination.Inputs[OLE DB Destination Input].Columns[ID_SourceSystem]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="ID_SourceSystem"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Partes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_SourceSystem]"
-                          lineageId="Package\Carga de Dimensiones\Dimension Partes\Union All.Outputs[Union All Output 1].Columns[ID_SourceSystem]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -5425,18 +5211,6 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
                           precision="12"
                           scale="2" />
                         <externalMetadataColumn
-                          refId="Package\Carga de Dimensiones\Dimension Partes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[NombreLinea]"
-                          codePage="1252"
-                          dataType="str"
-                          length="100"
-                          name="NombreLinea" />
-                        <externalMetadataColumn
-                          refId="Package\Carga de Dimensiones\Dimension Partes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[DescripcionLinea]"
-                          codePage="1252"
-                          dataType="str"
-                          length="500"
-                          name="DescripcionLinea" />
-                        <externalMetadataColumn
                           refId="Package\Carga de Dimensiones\Dimension Partes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[NombreCategoria]"
                           codePage="1252"
                           dataType="str"
@@ -5448,6 +5222,18 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
                           dataType="str"
                           length="500"
                           name="DescripcionCategoria" />
+                        <externalMetadataColumn
+                          refId="Package\Carga de Dimensiones\Dimension Partes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[NombreLinea]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NombreLinea" />
+                        <externalMetadataColumn
+                          refId="Package\Carga de Dimensiones\Dimension Partes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[DescripcionLinea]"
+                          codePage="1252"
+                          dataType="str"
+                          length="500"
+                          name="DescripcionLinea" />
                         <externalMetadataColumn
                           refId="Package\Carga de Dimensiones\Dimension Partes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[FechaInicioValidez]"
                           dataType="dbTimeStamp"
@@ -5474,16 +5260,6 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
                           dataType="wstr"
                           length="100"
                           name="UsuarioModificacion" />
-                        <externalMetadataColumn
-                          refId="Package\Carga de Dimensiones\Dimension Partes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Batch]"
-                          dataType="guid"
-                          name="ID_Batch" />
-                        <externalMetadataColumn
-                          refId="Package\Carga de Dimensiones\Dimension Partes\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_SourceSystem]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="ID_SourceSystem" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -5642,7 +5418,7 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
                       description="The SQL command to be executed."
                       expressionType="Notify"
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [Dimension].[Partes] SET [DescripcionCategoria] = ?,[DescripcionLinea] = ?,[DescripcionParte] = ?,[FechaCreacion] = ?,[FechaModificacion] = ?,[ID_Batch] = ?,[ID_Categoria] = ?,[ID_Linea] = ?,[ID_SourceSystem] = ?,[NombreLinea] = ?,[NombreParte] = ?,[PrecioParte] = ?,[UsuarioCreacion] = ?,[UsuarioModificacion] = ? WHERE [ID_Partes] = ? AND [FechaFinValidez] IS NULL</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [Dimension].[Partes] SET [DescripcionCategoria] = ?,[DescripcionLinea] = ?,[DescripcionParte] = ?,[FechaCreacion] = ?,[FechaModificacion] = ?,[ID_Categoria] = ?,[ID_Linea] = ?,[NombreLinea] = ?,[NombreParte] = ?,[PrecioParte] = ?,[UsuarioCreacion] = ?,[UsuarioModificacion] = ? WHERE [ID_Partes] = ? AND [FechaFinValidez] IS NULL</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -5701,44 +5477,30 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
                           externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                           lineageId="Package\Carga de Dimensiones\Dimension Partes\Fuente Partes.Outputs[OLE DB Source Output].Columns[FechaModificacion]" />
                         <inputColumn
-                          refId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ID_Batch]"
-                          cachedDataType="guid"
-                          cachedName="ID_Batch"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                          lineageId="Package\Carga de Dimensiones\Dimension Partes\Derived Column.Outputs[Derived Column Output].Columns[ID_Batch]" />
-                        <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ID_Categoria]"
                           cachedDataType="i4"
                           cachedName="ID_Categoria"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                           lineageId="Package\Carga de Dimensiones\Dimension Partes\Fuente Partes.Outputs[OLE DB Source Output].Columns[ID_Categoria]" />
                         <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ID_Linea]"
                           cachedDataType="i4"
                           cachedName="ID_Linea"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
                           lineageId="Package\Carga de Dimensiones\Dimension Partes\Fuente Partes.Outputs[OLE DB Source Output].Columns[ID_Linea]" />
                         <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ID_Partes]"
                           cachedDataType="i4"
                           cachedName="ID_Partes"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
                           lineageId="Package\Carga de Dimensiones\Dimension Partes\Fuente Partes.Outputs[OLE DB Source Output].Columns[ID_Partes]" />
-                        <inputColumn
-                          refId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ID_SourceSystem]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="ID_SourceSystem"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
-                          lineageId="Package\Carga de Dimensiones\Dimension Partes\Derived Column.Outputs[Derived Column Output].Columns[ID_SourceSystem]" />
                         <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[NombreLinea]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="100"
                           cachedName="NombreLinea"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
                           lineageId="Package\Carga de Dimensiones\Dimension Partes\Fuente Partes.Outputs[OLE DB Source Output].Columns[NombreLinea]" />
                         <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[NombreParte]"
@@ -5746,7 +5508,7 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
                           cachedDataType="str"
                           cachedLength="100"
                           cachedName="NombreParte"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
                           lineageId="Package\Carga de Dimensiones\Dimension Partes\Fuente Partes.Outputs[OLE DB Source Output].Columns[NombreParte]" />
                         <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[PrecioParte]"
@@ -5754,21 +5516,21 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
                           cachedName="PrecioParte"
                           cachedPrecision="12"
                           cachedScale="2"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
                           lineageId="Package\Carga de Dimensiones\Dimension Partes\Fuente Partes.Outputs[OLE DB Source Output].Columns[PrecioParte]" />
                         <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[UsuarioCreacion]"
                           cachedDataType="wstr"
                           cachedLength="100"
                           cachedName="UsuarioCreacion"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
                           lineageId="Package\Carga de Dimensiones\Dimension Partes\Fuente Partes.Outputs[OLE DB Source Output].Columns[UsuarioCreacion]" />
                         <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[UsuarioModificacion]"
                           cachedDataType="wstr"
                           cachedLength="100"
                           cachedName="UsuarioModificacion"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
                           lineageId="Package\Carga de Dimensiones\Dimension Partes\Fuente Partes.Outputs[OLE DB Source Output].Columns[UsuarioModificacion]" />
                       </inputColumns>
                       <externalMetadataColumns
@@ -5836,13 +5598,13 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                          dataType="guid"
+                          dataType="i4"
                           name="Param_5">
                           <properties>
                             <property
                               dataType="System.Int32"
                               description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
+                              name="DBParamInfoFlags">81</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
@@ -5858,20 +5620,22 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                          dataType="i4"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
                           name="Param_7">
                           <properties>
                             <property
                               dataType="System.Int32"
                               description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
+                              name="DBParamInfoFlags">65</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="100"
                           name="Param_8">
                           <properties>
                             <property
@@ -5882,21 +5646,20 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
-                          codePage="1252"
-                          dataType="str"
-                          length="100"
-                          name="Param_9">
+                          dataType="numeric"
+                          name="Param_9"
+                          precision="12"
+                          scale="2">
                           <properties>
                             <property
                               dataType="System.Int32"
                               description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
+                              name="DBParamInfoFlags">81</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
-                          codePage="1252"
-                          dataType="str"
+                          dataType="wstr"
                           length="100"
                           name="Param_10">
                           <properties>
@@ -5908,45 +5671,20 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
-                          dataType="numeric"
-                          name="Param_11"
-                          precision="12"
-                          scale="2">
+                          dataType="wstr"
+                          length="100"
+                          name="Param_11">
                           <properties>
                             <property
                               dataType="System.Int32"
                               description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">81</property>
+                              name="DBParamInfoFlags">65</property>
                           </properties>
                         </externalMetadataColumn>
                         <externalMetadataColumn
                           refId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
-                          dataType="wstr"
-                          length="100"
-                          name="Param_12">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
-                          dataType="wstr"
-                          length="100"
-                          name="Param_13">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                              name="DBParamInfoFlags">65</property>
-                          </properties>
-                        </externalMetadataColumn>
-                        <externalMetadataColumn
-                          refId="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
                           dataType="i4"
-                          name="Param_14">
+                          name="Param_12">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -6001,7 +5739,7 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
                       dataType="System.String"
                       description="Specifies the SELECT statement used to create a schema rowset."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [DescripcionCategoria], [DescripcionLinea], [DescripcionParte], [FechaCreacion], [FechaModificacion], [ID_Batch], [ID_Categoria], [ID_Linea], [ID_Partes], [ID_SourceSystem], [NombreCategoria], [NombreLinea], [NombreParte], [PrecioParte], [UsuarioCreacion], [UsuarioModificacion],[FechaInicioValidez],[FechaFinValidez] FROM [Dimension].[Partes]</property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [DescripcionCategoria], [DescripcionLinea], [DescripcionParte], [FechaCreacion], [FechaModificacion], [ID_Categoria], [ID_Linea], [ID_Partes], [NombreCategoria], [NombreLinea], [NombreParte], [PrecioParte], [UsuarioCreacion], [UsuarioModificacion],[FechaInicioValidez],[FechaFinValidez] FROM [Dimension].[Partes]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -6121,19 +5859,6 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Carga de Dimensiones\Dimension Partes\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[ID_Batch]"
-                          cachedDataType="guid"
-                          cachedName="ID_Batch"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Partes\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ID_Batch]"
-                          lineageId="Package\Carga de Dimensiones\Dimension Partes\Derived Column.Outputs[Derived Column Output].Columns[ID_Batch]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              name="ColumnType"
-                              typeConverter="ColumnType">2</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
                           refId="Package\Carga de Dimensiones\Dimension Partes\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[ID_Categoria]"
                           cachedDataType="i4"
                           cachedName="ID_Categoria"
@@ -6170,21 +5895,6 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
                               dataType="System.Int32"
                               name="ColumnType"
                               typeConverter="ColumnType">1</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Carga de Dimensiones\Dimension Partes\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[ID_SourceSystem]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="ID_SourceSystem"
-                          externalMetadataColumnId="Package\Carga de Dimensiones\Dimension Partes\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ID_SourceSystem]"
-                          lineageId="Package\Carga de Dimensiones\Dimension Partes\Derived Column.Outputs[Derived Column Output].Columns[ID_SourceSystem]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              name="ColumnType"
-                              typeConverter="ColumnType">2</property>
                           </properties>
                         </inputColumn>
                         <inputColumn
@@ -6305,10 +6015,6 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
                           dataType="dbTimeStamp"
                           name="FechaModificacion" />
                         <externalMetadataColumn
-                          refId="Package\Carga de Dimensiones\Dimension Partes\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ID_Batch]"
-                          dataType="guid"
-                          name="ID_Batch" />
-                        <externalMetadataColumn
                           refId="Package\Carga de Dimensiones\Dimension Partes\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ID_Categoria]"
                           dataType="i4"
                           name="ID_Categoria" />
@@ -6320,12 +6026,6 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
                           refId="Package\Carga de Dimensiones\Dimension Partes\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ID_Partes]"
                           dataType="i4"
                           name="ID_Partes" />
-                        <externalMetadataColumn
-                          refId="Package\Carga de Dimensiones\Dimension Partes\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ID_SourceSystem]"
-                          codePage="1252"
-                          dataType="str"
-                          length="50"
-                          name="ID_SourceSystem" />
                         <externalMetadataColumn
                           refId="Package\Carga de Dimensiones\Dimension Partes\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[NombreCategoria]"
                           codePage="1252"
@@ -7082,19 +6782,19 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
         <NodeLayout
           Size="159.2,41.6"
           Id="Package\Carga de Dimensiones\Dimension Fecha"
-          TopLeft="65.9999876817072,17.0666688431633" />
+          TopLeft="68.4999875823661,23.1333355580435" />
         <NodeLayout
           Size="160.8,41.6"
           Id="Package\Carga de Dimensiones\Dimension Partes"
-          TopLeft="55.9999880790716,111.533336260584" />
+          TopLeft="66.8333209819268,115.000002954801" />
         <NodeLayout
           Size="168,41.6"
           Id="Package\Carga de Dimensiones\Dimension Clientes"
-          TopLeft="61.833321180609,202.733336177932" />
+          TopLeft="60.1666545801697,203.600002851486" />
         <NodeLayout
           Size="176,41.6"
           Id="Package\Carga de Dimensiones\Dimension Geografia"
-          TopLeft="57.6666546795107,303.466669504378" />
+          TopLeft="56.8333213792911,302.600002830823" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -7409,25 +7109,25 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
         <NodeLayout
           Size="146.4,41.6"
           Id="Package\Carga de Dimensiones\Dimension Clientes\Fuente Cliente"
-          TopLeft="162.9,7.49999999999995" />
+          TopLeft="160.9,5.49999999999995" />
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\Carga de Dimensiones\Dimension Clientes\Derived Column"
           TopLeft="157.7,107.1" />
         <EdgeLayout
           Id="Package\Carga de Dimensiones\Dimension Clientes.Paths[OLE DB Source Output]"
-          TopLeft="235.1,49.1">
+          TopLeft="234.1,47.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,57.9999999999999"
+              EndConnector="0,59.9999999999999"
               Start="0,0"
-              End="0,50.4999999999999">
+              End="0,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50.4999999999999" />
+                    End="0,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8002,6 +7702,22 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Carga de Dimensiones\Dimension Geografia\Fuente Geografia">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga de Dimensiones\Dimension Clientes\Fuente Cliente">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Carga de Dimensiones\Dimension Partes\Slowly Changing Dimension">
     <Properties>
       <Property>
@@ -8043,12 +7759,6 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
       &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Derived Column.Outputs[Derived Column Output].Columns[ID_Batch]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ID_Batch&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
       &lt;IdentificationString&gt;Fuente Partes.Outputs[OLE DB Source Output].Columns[ID_Categoria]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;ID_Categoria&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
@@ -8065,12 +7775,6 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
       &lt;ColumnName&gt;ID_Partes&lt;/ColumnName&gt;
       &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
       &lt;ChangeType&gt;None&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Derived Column.Outputs[Derived Column Output].Columns[ID_SourceSystem]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ID_SourceSystem&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
       &lt;IdentificationString&gt;Fuente Partes.Outputs[OLE DB Source Output].Columns[NombreCategoria]&lt;/IdentificationString&gt;
@@ -8133,135 +7837,6 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Carga de Dimensiones\Dimension Geografia\Fuente Geografia">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Carga de Dimensiones\Dimension Geografia\Slowly Changing Dimension">
-    <Properties>
-      <Property>
-        <Name>SCDMetadata</Name>
-        <Value
-          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionID&gt;{DA43E185-DCC1-447B-BED8-ECB2B2D21DD8}&lt;/ConnectionID&gt;
-  &lt;TableName&gt;[Dimension].[Geografia]&lt;/TableName&gt;
-  &lt;InputToColumnsCollection&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[CodigoPostal]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;CodigoPostal&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[FechaCreacion]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;FechaCreacion&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[FechaModificacion]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;FechaModificacion&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Derived Column.Outputs[Derived Column Output].Columns[ID_Batch]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ID_Batch&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[ID_Ciudad]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ID_Ciudad&lt;/ColumnName&gt;
-      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
-      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[ID_Pais]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ID_Pais&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[ID_Region]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ID_Region&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Derived Column.Outputs[Derived Column Output].Columns[ID_SourceSystem]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ID_SourceSystem&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[NombreCiudad]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;NombreCiudad&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[NombrePais]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;NombrePais&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[NombreRegion]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;NombreRegion&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[UsuarioCreacion]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;UsuarioCreacion&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[UsuarioModificacion]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;UsuarioModificacion&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-  &lt;/InputToColumnsCollection&gt;
-  &lt;GeneratedComponentsIdentificationStrings&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 2&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
-  &lt;/GeneratedComponentsIdentificationStrings&gt;
-  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
-  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
-  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
-  &lt;CurrentIndicatorColumn /&gt;
-  &lt;InferredIndicatorColumn /&gt;
-  &lt;ValueCurrent /&gt;
-  &lt;ValueExpired /&gt;
-  &lt;StartDateColumn&gt;FechaInicioValidez&lt;/StartDateColumn&gt;
-  &lt;EndDateColumn&gt;FechaFinValidez&lt;/EndDateColumn&gt;
-  &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
-  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
-&lt;/SCDWizardMetadata&gt;</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Carga de Dimensiones\Dimension Clientes\Fuente Cliente">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Carga de Dimensiones\Dimension Clientes\Slowly Changing Dimension">
     <Properties>
       <Property>
@@ -8303,22 +7878,10 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
       &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Derived Column.Outputs[Derived Column Output].Columns[ID_Batch]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ID_Batch&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
       &lt;IdentificationString&gt;Fuente Cliente.Outputs[OLE DB Source Output].Columns[ID_Cliente]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;ID_Cliente&lt;/ColumnName&gt;
       &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
       &lt;ChangeType&gt;None&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Derived Column.Outputs[Derived Column Output].Columns[ID_SourceSystem]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ID_SourceSystem&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
       &lt;IdentificationString&gt;Fuente Cliente.Outputs[OLE DB Source Output].Columns[PrimerApellidO]&lt;/IdentificationString&gt;
@@ -8366,6 +7929,107 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
     &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
   &lt;/GeneratedComponentsIdentificationStrings&gt;
   &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn&gt;FechaInicioValidez&lt;/StartDateColumn&gt;
+  &lt;EndDateColumn&gt;FechaFinValidez&lt;/EndDateColumn&gt;
+  &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga de Dimensiones\Dimension Geografia\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{DA43E185-DCC1-447B-BED8-ECB2B2D21DD8}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[Dimension].[Geografia]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[CodigoPostal]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;CodigoPostal&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[FechaCreacion]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;FechaCreacion&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[FechaModificacion]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;FechaModificacion&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[ID_Ciudad]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ID_Ciudad&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[ID_Pais]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ID_Pais&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[ID_Region]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ID_Region&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[NombreCiudad]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;NombreCiudad&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[NombrePais]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;NombrePais&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[NombreRegion]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;NombreRegion&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[UsuarioCreacion]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;UsuarioCreacion&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[UsuarioModificacion]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;UsuarioModificacion&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 2&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
   &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
   &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
   &lt;CurrentIndicatorColumn /&gt;
