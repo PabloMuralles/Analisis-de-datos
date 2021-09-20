@@ -43,9 +43,9 @@ BEGIN
 				@NuevoGUIDINsert as ID_Batch,
 				'ssis' as ID_SourceSystem
 			from staging.Orden O
-			inner join Dimension.Clientes C on (O.ID_Cliente=C.ID_Cliente)
-			inner join Dimension.Partes P on (O.ID_Partes=P.ID_Partes)
-			inner join Dimension.Geografia G on (O.ID_Ciudad=G.ID_Ciudad)
+			inner join Dimension.Clientes C on (O.ID_Cliente=C.ID_Cliente and O.Fecha_Orden between C.FechaInicioValidez and isnull(C.FechaFinValidez, '9999-12-31'))
+			inner join Dimension.Partes P on (O.ID_Partes=P.ID_Partes and O.Fecha_Orden between P.FechaInicioValidez and isnull(P.FechaFinValidez, '9999-12-31'))
+			inner join Dimension.Geografia G on (O.ID_Ciudad=G.ID_Ciudad and O.Fecha_Orden between G.FechaInicioValidez and isnull(G.FechaFinValidez, '9999-12-31'))
 			left join Dimension.Fecha F on (CAST( (CAST(YEAR(O.Fecha_Orden) AS VARCHAR(4)))+left('0'+CAST(MONTH(O.Fecha_Orden) AS VARCHAR(4)),2)+left('0'+(CAST(DAY(O.Fecha_Orden) AS VARCHAR(4))),2) AS INT)  = F.DateKey)
 			--SELECT [SK_Candidato], [SK_Carrera], [DateKey], [ID_Examen], [ID_Descuento], r.Descripcion AS DescripcionDescuento, [PorcentajeDescuento], [Precio], r.Nota as NotaTotal, [NotaArea], [NombreMateria], getdate() as FechaCreacion, 'ETL' as UsuarioCreacion, NULL as FechaModificacion, NULL as UsuarioModificacion, @NuevoGUIDINsert as ID_Batch, 'ssis' as ID_SourceSystem, r.FechaPrueba, r.FechaModificacionSource
 			--FROM STAGING.Examen R

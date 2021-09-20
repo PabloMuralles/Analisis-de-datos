@@ -8,6 +8,8 @@
         <UseWinAuth>false</UseWinAuth>
         <WinAuthUserName />
         <WinAuthDomain />
+        <ServerName>localhost</ServerName>
+        <PathOnServer>/SSISDB/ETLAdmisiones/AdmisionesETL</PathOnServer>
         <StartObjectID>ETLDimensiones.dtsx</StartObjectID>
         <UserIDs />
         <UserPasswords />

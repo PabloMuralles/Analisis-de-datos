@@ -11,8 +11,8 @@
   DTS:LocaleID="22538"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{BD38A14F-9057-459E-97B3-763A2BF89205}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{9245C47C-3C98-42A9-8495-8B9A116BA9DB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -791,7 +791,12 @@ where ((Fecha_Orden&gt;?) or (Fecha_Modificacion&gt;?))</property>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{31CBB014-CEB3-4A44-9C33-8F94301EFC79}"
-              SQLTask:SqlStatementSource="SELECT ISNULL(MAX(FechaEjecucion),'1900-01-01') AS UltimaFecha&#xA;FROM FactLog" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="SELECT ISNULL(MAX(FechaEjecucion),'1900-01-01') AS UltimaFecha&#xA;FROM FactLog"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::VFechaEjecucion" />
+            </SQLTask:SqlTaskData>
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -836,6 +841,14 @@ where ((Fecha_Orden&gt;?) or (Fecha_Modificacion&gt;?))</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="147.2,41.6"
+          Id="Package\Carga de Fact\Actualizar Fact"
+          TopLeft="112.76665001048,301.733337562349" />
+        <NodeLayout
+          Size="156.8,41.6"
+          Id="Package\Carga de Fact\Cargar a Staging"
+          TopLeft="105.266650308504,202.933336777158" />
+        <NodeLayout
           Size="164.8,41.6"
           Id="Package\Carga de Fact\Limpiar Staging"
           TopLeft="106.099983608723,20.0666686571971" />
@@ -843,14 +856,6 @@ where ((Fecha_Orden&gt;?) or (Fecha_Modificacion&gt;?))</property>
           Size="201.6,41.6"
           Id="Package\Carga de Fact\Ultima Fecha de Ejecucion"
           TopLeft="88.8333300219644,116.433334214952" />
-        <NodeLayout
-          Size="156.8,41.6"
-          Id="Package\Carga de Fact\Cargar a Staging"
-          TopLeft="105.266650308504,202.933336777158" />
-        <NodeLayout
-          Size="147.2,41.6"
-          Id="Package\Carga de Fact\Actualizar Fact"
-          TopLeft="112.76665001048,301.733337562349" />
         <EdgeLayout
           Id="Package\Carga de Fact.PrecedenceConstraints[Constraint]"
           TopLeft="189.066656815344,61.6666686571971">
@@ -966,14 +971,6 @@ where ((Fecha_Orden&gt;?) or (Fecha_Modificacion&gt;?))</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Carga de Fact\Cargar a Staging\Fuente Orden">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Carga de Fact\Cargar a Staging\Carga a Staging Orden">
     <Properties>
       <Property>
@@ -983,6 +980,14 @@ where ((Fecha_Orden&gt;?) or (Fecha_Modificacion&gt;?))</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga de Fact\Cargar a Staging\Fuente Orden">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
