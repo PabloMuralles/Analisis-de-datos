@@ -136,3 +136,21 @@ insert into Detalle_orden (ID_Orden,ID_Partes,ID_Descuento,Cantidad) values (1,1
 insert into Detalle_orden (ID_Orden,ID_Partes,ID_Descuento,Cantidad) values (2,1,1,2)
 insert into Detalle_orden (ID_Orden,ID_Partes,ID_Descuento,Cantidad) values (3,1,1,2)
 go
+-------prueba scd 
+update Categoria
+set Nombre = 'Llantas motos'
+where ID_Categoria = 1
+
+update Ciudad
+set CodigoPostal = '010575'
+where ID_Ciudad = 1
+
+select * from Ciudad
+
+update Clientes
+set	Correo_Electronico='pablomuralles28@gmail.com'
+where ID_Cliente = 1
+
+update Clientes
+set	FechaNacimiento = GETDATE()
+where ID_Cliente = 1
