@@ -46,3 +46,12 @@ truncate table staging.Orden
 SELECT ISNULL(MAX(FechaEjecucion),'1900-01-01') AS UltimaFecha
 FROM FactLog
  
+ ---- esto es para poder insertar valores si es una carga inicial
+ update Dimension.Clientes
+ set FechaInicioValidez = '2000-01-01'
+
+ update Dimension.Geografia
+ set FechaInicioValidez = '2000-01-01'
+
+ update Dimension.Partes
+ set FechaInicioValidez = '2000-01-01'

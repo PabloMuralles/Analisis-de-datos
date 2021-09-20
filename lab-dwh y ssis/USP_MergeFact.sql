@@ -86,5 +86,5 @@ BEGIN
 END
 go
 
-exec USP_MergeFact
-rollback
+--exec USP_MergeFact
+--rollback

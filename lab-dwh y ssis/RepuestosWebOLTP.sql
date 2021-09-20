@@ -108,8 +108,6 @@ CREATE TABLE Orden
 )
 
 INSERT INTO Orden (ID_Cliente,ID_Ciudad,ID_StatusOrden,Total_Orden,Fecha_Orden) values(1,1,1,180.00,getdate())
-INSERT INTO Orden (ID_Cliente,ID_Ciudad,ID_StatusOrden,Total_Orden,Fecha_Orden) values(1,1,1,185425.00,getdate())
-INSERT INTO Orden (ID_Cliente,ID_Ciudad,ID_StatusOrden,Total_Orden,Fecha_Orden) values(1,1,1,180425.00,getdate())
 select * from Orden
 go
 
@@ -133,9 +131,14 @@ CREATE TABLE Detalle_orden
 )
 
 insert into Detalle_orden (ID_Orden,ID_Partes,ID_Descuento,Cantidad) values (1,1,1,2)
+go
+---inserciones preuba
+INSERT INTO Orden (ID_Cliente,ID_Ciudad,ID_StatusOrden,Total_Orden,Fecha_Orden) values(1,1,1,185425.00,getdate())
+INSERT INTO Orden (ID_Cliente,ID_Ciudad,ID_StatusOrden,Total_Orden,Fecha_Orden) values(1,1,1,180425.00,getdate())
+INSERT INTO Orden (ID_Cliente,ID_Ciudad,ID_StatusOrden,Total_Orden,Fecha_Orden) values(1,1,1,204145.00,getdate())
 insert into Detalle_orden (ID_Orden,ID_Partes,ID_Descuento,Cantidad) values (2,1,1,2)
 insert into Detalle_orden (ID_Orden,ID_Partes,ID_Descuento,Cantidad) values (3,1,1,2)
-go
+insert into Detalle_orden (ID_Orden,ID_Partes,ID_Descuento,Cantidad) values (4,1,1,2)
 -------prueba scd 
 update Categoria
 set Nombre = 'Llantas motos'
