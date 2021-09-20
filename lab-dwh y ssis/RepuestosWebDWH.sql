@@ -165,6 +165,8 @@ alter table Fact.Orden add PorcentajeDescuento  [UDT_Decimal2.2]
 alter table Fact.Orden add Total_Orden [UDT_Decimal12.2]
 alter table Fact.Orden add Cantidad [UDT_INT]---duda si es necesario para los ints o solo se pone int
 alter table Fact.Orden add NombreStatus [UDT_VarcharCorto]
+alter table Fact.Orden add Fecha_Orden [UDT_DateTime]
+alter table Fact.Orden add Fecha_Modificacion [UDT_DateTime]
 ----Columnas de auditoria
 --FechaCreacion datetime NOT NULL default(GETDATE()),
 --UsuarioCreacion nvarchar(100) NOT NULL default(SUSER_NAME()),

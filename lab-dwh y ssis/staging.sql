@@ -24,18 +24,20 @@ go
 Create table staging.Orden
 (
 	ID_Orden int not null,
+	ID_Cliente int null,
+	ID_Ciudad int null,
+	ID_StatusOrden int null,
+	Total_Orden decimal(12,2) null,
+	Fecha_Orden datetime null,
+	Fecha_Modificacion datetime null,
+	ID_DetalleOrden int not null,
+	ID_Partes int not null,
+	Cantidad int null,
 	ID_Descuento int null,
 	NombreDescuento varchar(200) null,
 	PorcentajeDescuento decimal(2,2),
-	Total_Orden decimal(12,2) null,
-	Cantidad int null,
-	NombreStatus
-	FechaCreacion
-	UsuarioCreacion
-	FechaModificacion
-	UsuarioModificacion
-
-
-
-)
+	NombreStatus varchar(100) null
+)on [PRIMARY]
 go
+
+--select * from staging.Orden

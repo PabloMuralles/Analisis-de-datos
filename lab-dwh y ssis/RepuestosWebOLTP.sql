@@ -108,6 +108,9 @@ CREATE TABLE Orden
 )
 
 INSERT INTO Orden (ID_Cliente,ID_Ciudad,ID_StatusOrden,Total_Orden,Fecha_Orden) values(1,1,1,180.00,getdate())
+INSERT INTO Orden (ID_Cliente,ID_Ciudad,ID_StatusOrden,Total_Orden,Fecha_Orden) values(1,1,1,185425.00,getdate())
+INSERT INTO Orden (ID_Cliente,ID_Ciudad,ID_StatusOrden,Total_Orden,Fecha_Orden) values(1,1,1,180425.00,getdate())
+select * from Orden
 go
 
 CREATE TABLE Descuento
@@ -129,6 +132,7 @@ CREATE TABLE Detalle_orden
 	Cantidad INT NOT NULL
 )
 
-insert into Detalle_orden (ID_Orden,ID_Partes,ID_Descuento,Cantidad)
-values (1,1,1,2)
+insert into Detalle_orden (ID_Orden,ID_Partes,ID_Descuento,Cantidad) values (1,1,1,2)
+insert into Detalle_orden (ID_Orden,ID_Partes,ID_Descuento,Cantidad) values (2,1,1,2)
+insert into Detalle_orden (ID_Orden,ID_Partes,ID_Descuento,Cantidad) values (3,1,1,2)
 go

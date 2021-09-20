@@ -11,8 +11,8 @@
   DTS:LocaleID="22538"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{625BAA04-23E7-4781-A252-3A64D5594E37}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{3A57C5B2-8208-45E3-A592-95E3FA47806C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -7082,26 +7082,26 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
         <NodeLayout
           Size="159.2,41.6"
           Id="Package\Carga de Dimensiones\Dimension Fecha"
-          TopLeft="50.9999882777536,17.0666688431633" />
+          TopLeft="65.9999876817072,17.0666688431633" />
         <NodeLayout
           Size="160.8,41.6"
           Id="Package\Carga de Dimensiones\Dimension Partes"
-          TopLeft="55.1666547788519,110.666669587029" />
+          TopLeft="55.9999880790716,111.533336260584" />
         <NodeLayout
           Size="168,41.6"
           Id="Package\Carga de Dimensiones\Dimension Clientes"
-          TopLeft="50.166654977534,201.866669504378" />
+          TopLeft="61.833321180609,202.733336177932" />
         <NodeLayout
           Size="176,41.6"
           Id="Package\Carga de Dimensiones\Dimension Geografia"
-          TopLeft="47.666655076875,302.600002830823" />
+          TopLeft="57.6666546795107,303.466669504378" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="286.4,400"
           Size="286.4,443.2"
           Id="Package\Carga de Dimensiones"
-          TopLeft="244.166656964355,213.200001694362" />
+          TopLeft="223.333324458864,136.933334421582" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -7409,25 +7409,25 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
         <NodeLayout
           Size="146.4,41.6"
           Id="Package\Carga de Dimensiones\Dimension Clientes\Fuente Cliente"
-          TopLeft="160.9,5.49999999999995" />
+          TopLeft="162.9,7.49999999999995" />
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\Carga de Dimensiones\Dimension Clientes\Derived Column"
           TopLeft="157.7,107.1" />
         <EdgeLayout
           Id="Package\Carga de Dimensiones\Dimension Clientes.Paths[OLE DB Source Output]"
-          TopLeft="234.1,47.1">
+          TopLeft="235.1,49.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
+              EndConnector="0,57.9999999999999"
               Start="0,0"
-              End="0,52.4999999999999">
+              End="0,50.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.4999999999999" />
+                    End="0,50.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
