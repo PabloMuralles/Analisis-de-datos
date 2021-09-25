@@ -11,8 +11,8 @@
   DTS:LocaleID="22538"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="15"
-  DTS:VersionGUID="{04241DE4-D5E7-43D9-8045-0A121F8DE9A3}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{76B936F2-F637-4972-A4A5-92DC0821D9C5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -6780,21 +6780,21 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="159.2,41.6"
-          Id="Package\Carga de Dimensiones\Dimension Fecha"
-          TopLeft="68.4999875823661,23.1333355580435" />
-        <NodeLayout
-          Size="160.8,41.6"
-          Id="Package\Carga de Dimensiones\Dimension Partes"
-          TopLeft="66.8333209819268,115.000002954801" />
-        <NodeLayout
           Size="168,41.6"
           Id="Package\Carga de Dimensiones\Dimension Clientes"
           TopLeft="60.1666545801697,203.600002851486" />
         <NodeLayout
+          Size="159.2,41.6"
+          Id="Package\Carga de Dimensiones\Dimension Fecha"
+          TopLeft="68.4999875823661,23.1333355580435" />
+        <NodeLayout
           Size="176,41.6"
           Id="Package\Carga de Dimensiones\Dimension Geografia"
           TopLeft="56.8333213792911,302.600002830823" />
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\Carga de Dimensiones\Dimension Partes"
+          TopLeft="66.8333209819268,115.000002954801" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
@@ -6806,302 +6806,6 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Carga de Dimensiones\Dimension Partes">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="143.2,41.6"
-          Id="Package\Carga de Dimensiones\Dimension Partes\Fuente Partes"
-          TopLeft="162.5,5.49999999999995" />
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Carga de Dimensiones\Dimension Partes\Derived Column"
-          TopLeft="157.7,107.1" />
-        <EdgeLayout
-          Id="Package\Carga de Dimensiones\Dimension Partes.Paths[OLE DB Source Output]"
-          TopLeft="234.1,47.1">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="208,41.6"
-          Id="Package\Carga de Dimensiones\Dimension Partes\Slowly Changing Dimension"
-          TopLeft="130.1,208.7" />
-        <EdgeLayout
-          Id="Package\Carga de Dimensiones\Dimension Partes.Paths[Derived Column Output]"
-          TopLeft="234.1,148.7">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\Carga de Dimensiones\Dimension Partes\Derived Column 1"
-          TopLeft="11.3000000000001,310.3" />
-        <EdgeLayout
-          Id="Package\Carga de Dimensiones\Dimension Partes.Paths[Historical Attribute Inserts Output]"
-          TopLeft="184.1,250.3">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-92,59.9999999999999"
-              Start="0,0"
-              End="-92,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.506329113924" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.506329113924"
-                    Point2="0,20.506329113924"
-                    Point3="-4,20.506329113924" />
-                  <mssgle:LineSegment
-                    End="-88,20.506329113924" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-88,20.506329113924"
-                    Point2="-92,20.506329113924"
-                    Point3="-92,24.506329113924" />
-                  <mssgle:LineSegment
-                    End="-92,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-121.05638671875,25.506329113924,150.1127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command"
-          TopLeft="5.50000000000009,411.9" />
-        <EdgeLayout
-          Id="Package\Carga de Dimensiones\Dimension Partes.Paths[Derived Column Output1]"
-          TopLeft="90.6000000000001,351.9">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="120,41.6"
-          Id="Package\Carga de Dimensiones\Dimension Partes\Union All"
-          TopLeft="174.1,513.5" />
-        <EdgeLayout
-          Id="Package\Carga de Dimensiones\Dimension Partes.Paths[New Output]"
-          TopLeft="234.1,250.3">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="18.6666666666667,263.2"
-              Start="0,0"
-              End="18.6666666666667,255.7">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,151.842105263158" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,151.842105263158"
-                    Point2="0,155.842105263158"
-                    Point3="4,155.842105263158" />
-                  <mssgle:LineSegment
-                    End="14.6666666666667,155.842105263158" />
-                  <mssgle:CubicBezierSegment
-                    Point1="14.6666666666667,155.842105263158"
-                    Point2="18.6666666666667,155.842105263158"
-                    Point3="18.6666666666667,159.842105263158" />
-                  <mssgle:LineSegment
-                    End="18.6666666666667,255.7" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-17.7580533854167,160.842105263158,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Carga de Dimensiones\Dimension Partes.Paths[OLE DB Command Output]"
-          TopLeft="89.1000000000001,453.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="126.333333333333,59.9999999999999"
-              Start="0,0"
-              End="126.333333333333,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5263157894736" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5263157894736"
-                    Point2="0,35.5263157894736"
-                    Point3="4,35.5263157894736" />
-                  <mssgle:LineSegment
-                    End="122.333333333333,35.5263157894736" />
-                  <mssgle:CubicBezierSegment
-                    Point1="122.333333333333,35.5263157894736"
-                    Point2="126.333333333333,35.5263157894736"
-                    Point3="126.333333333333,39.5263157894736" />
-                  <mssgle:LineSegment
-                    End="126.333333333333,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\Carga de Dimensiones\Dimension Partes\Derived Column 2"
-          TopLeft="153.3,615.099999999999" />
-        <EdgeLayout
-          Id="Package\Carga de Dimensiones\Dimension Partes.Paths[Union All Output 1]"
-          TopLeft="234.1,555.1">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="159.2,41.6"
-          Id="Package\Carga de Dimensiones\Dimension Partes\Insert Destination"
-          TopLeft="154.5,716.699999999999" />
-        <EdgeLayout
-          Id="Package\Carga de Dimensiones\Dimension Partes.Paths[Derived Column Output2]"
-          TopLeft="234.1,656.699999999999">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="176,41.6"
-          Id="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1"
-          TopLeft="295.1,310.3" />
-        <EdgeLayout
-          Id="Package\Carga de Dimensiones\Dimension Partes.Paths[Changing Attribute Updates Output]"
-          TopLeft="284.1,250.3">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="99,59.9999999999999"
-              Start="0,0"
-              End="99,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.506329113924" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.506329113924"
-                    Point2="0,20.506329113924"
-                    Point3="4,20.506329113924" />
-                  <mssgle:LineSegment
-                    End="95,20.506329113924" />
-                  <mssgle:CubicBezierSegment
-                    Point1="95,20.506329113924"
-                    Point2="99,20.506329113924"
-                    Point3="99,24.506329113924" />
-                  <mssgle:LineSegment
-                    End="99,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-29.03390625,25.506329113924,157.0678125,11.6630859375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <TaskHost
     design-time-name="Package\Carga de Dimensiones\Dimension Clientes">
     <LayoutInfo>
       <GraphLayout
@@ -7110,6 +6814,10 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
           Size="146.4,41.6"
           Id="Package\Carga de Dimensiones\Dimension Clientes\Fuente Cliente"
           TopLeft="160.9,5.49999999999995" />
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\Carga de Dimensiones\Dimension Clientes\Slowly Changing Dimension"
+          TopLeft="130.1,208.7" />
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\Carga de Dimensiones\Dimension Clientes\Derived Column"
@@ -7136,10 +6844,6 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="208,41.6"
-          Id="Package\Carga de Dimensiones\Dimension Clientes\Slowly Changing Dimension"
-          TopLeft="130.1,208.7" />
         <EdgeLayout
           Id="Package\Carga de Dimensiones\Dimension Clientes.Paths[Derived Column Output]"
           TopLeft="234.1,148.7">
@@ -7397,6 +7101,121 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga de Dimensiones\Dimension Clientes\Fuente Cliente">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga de Dimensiones\Dimension Clientes\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{DA43E185-DCC1-447B-BED8-ECB2B2D21DD8}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[Dimension].[Clientes]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Cliente.Outputs[OLE DB Source Output].Columns[Correo_Electronico]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Correo_Electronico&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Cliente.Outputs[OLE DB Source Output].Columns[FechaCreacion]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;FechaCreacion&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Cliente.Outputs[OLE DB Source Output].Columns[FechaModificacion]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;FechaModificacion&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Cliente.Outputs[OLE DB Source Output].Columns[FechaNacimiento]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;FechaNacimiento&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Cliente.Outputs[OLE DB Source Output].Columns[Genero]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Genero&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Cliente.Outputs[OLE DB Source Output].Columns[ID_Cliente]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ID_Cliente&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Cliente.Outputs[OLE DB Source Output].Columns[PrimerApellidO]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;PrimerApellido&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Cliente.Outputs[OLE DB Source Output].Columns[PrimerNombre]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;PrimerNombre&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Cliente.Outputs[OLE DB Source Output].Columns[SegundoApellido]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;SegundoApellido&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Cliente.Outputs[OLE DB Source Output].Columns[SegundoNombre]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;SegundoNombre&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Cliente.Outputs[OLE DB Source Output].Columns[UsuarioCreacion]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;UsuarioCreacion&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Cliente.Outputs[OLE DB Source Output].Columns[UsuarioModificacion]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;UsuarioModificacion&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 2&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn&gt;FechaInicioValidez&lt;/StartDateColumn&gt;
+  &lt;EndDateColumn&gt;FechaFinValidez&lt;/EndDateColumn&gt;
+  &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Carga de Dimensiones\Dimension Geografia">
     <LayoutInfo>
@@ -7407,12 +7226,16 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
           Id="Package\Carga de Dimensiones\Dimension Geografia\Fuente Geografia"
           TopLeft="154.5,5.49999999999995" />
         <NodeLayout
+          Size="208,41.6"
+          Id="Package\Carga de Dimensiones\Dimension Geografia\Slowly Changing Dimension"
+          TopLeft="130.1,208.7" />
+        <NodeLayout
           Size="152.8,41.6"
           Id="Package\Carga de Dimensiones\Dimension Geografia\Derived Column"
           TopLeft="157.7,107.1" />
         <EdgeLayout
-          Id="Package\Carga de Dimensiones\Dimension Geografia.Paths[OLE DB Source Output]"
-          TopLeft="234.1,47.1">
+          Id="Package\Carga de Dimensiones\Dimension Geografia.Paths[Derived Column Output]"
+          TopLeft="234.1,148.7">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -7432,13 +7255,9 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="208,41.6"
-          Id="Package\Carga de Dimensiones\Dimension Geografia\Slowly Changing Dimension"
-          TopLeft="130.1,208.7" />
         <EdgeLayout
-          Id="Package\Carga de Dimensiones\Dimension Geografia.Paths[Derived Column Output]"
-          TopLeft="234.1,148.7">
+          Id="Package\Carga de Dimensiones\Dimension Geografia.Paths[OLE DB Source Output]"
+          TopLeft="234.1,47.1">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -7694,14 +7513,6 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Carga de Dimensiones\Dimension Partes\Fuente Partes">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Carga de Dimensiones\Dimension Geografia\Fuente Geografia">
     <Properties>
       <Property>
@@ -7710,13 +7521,402 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Carga de Dimensiones\Dimension Clientes\Fuente Cliente">
+    design-time-name="Package\Carga de Dimensiones\Dimension Geografia\Slowly Changing Dimension">
     <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{DA43E185-DCC1-447B-BED8-ECB2B2D21DD8}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[Dimension].[Geografia]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[CodigoPostal]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;CodigoPostal&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[FechaCreacion]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;FechaCreacion&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[FechaModificacion]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;FechaModificacion&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[ID_Ciudad]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ID_Ciudad&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[ID_Pais]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ID_Pais&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[ID_Region]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ID_Region&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[NombreCiudad]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;NombreCiudad&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[NombrePais]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;NombrePais&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[NombreRegion]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;NombreRegion&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[UsuarioCreacion]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;UsuarioCreacion&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[UsuarioModificacion]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;UsuarioModificacion&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 2&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn&gt;FechaInicioValidez&lt;/StartDateColumn&gt;
+  &lt;EndDateColumn&gt;FechaFinValidez&lt;/EndDateColumn&gt;
+  &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Carga de Dimensiones\Dimension Partes">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="208,41.6"
+          Id="Package\Carga de Dimensiones\Dimension Partes\Slowly Changing Dimension"
+          TopLeft="130.1,208.7" />
+        <NodeLayout
+          Size="143.2,41.6"
+          Id="Package\Carga de Dimensiones\Dimension Partes\Fuente Partes"
+          TopLeft="162.5,5.49999999999995" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Carga de Dimensiones\Dimension Partes\Derived Column"
+          TopLeft="157.7,107.1" />
+        <EdgeLayout
+          Id="Package\Carga de Dimensiones\Dimension Partes.Paths[Derived Column Output]"
+          TopLeft="234.1,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga de Dimensiones\Dimension Partes.Paths[OLE DB Source Output]"
+          TopLeft="234.1,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\Carga de Dimensiones\Dimension Partes\Derived Column 1"
+          TopLeft="11.3000000000001,310.3" />
+        <EdgeLayout
+          Id="Package\Carga de Dimensiones\Dimension Partes.Paths[Historical Attribute Inserts Output]"
+          TopLeft="184.1,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-92,59.9999999999999"
+              Start="0,0"
+              End="-92,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.506329113924"
+                    Point2="0,20.506329113924"
+                    Point3="-4,20.506329113924" />
+                  <mssgle:LineSegment
+                    End="-88,20.506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-88,20.506329113924"
+                    Point2="-92,20.506329113924"
+                    Point3="-92,24.506329113924" />
+                  <mssgle:LineSegment
+                    End="-92,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-121.05638671875,25.506329113924,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command"
+          TopLeft="5.50000000000009,411.9" />
+        <EdgeLayout
+          Id="Package\Carga de Dimensiones\Dimension Partes.Paths[Derived Column Output1]"
+          TopLeft="90.6000000000001,351.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\Carga de Dimensiones\Dimension Partes\Union All"
+          TopLeft="174.1,513.5" />
+        <EdgeLayout
+          Id="Package\Carga de Dimensiones\Dimension Partes.Paths[New Output]"
+          TopLeft="234.1,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.6666666666667,263.2"
+              Start="0,0"
+              End="18.6666666666667,255.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,151.842105263158" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,151.842105263158"
+                    Point2="0,155.842105263158"
+                    Point3="4,155.842105263158" />
+                  <mssgle:LineSegment
+                    End="14.6666666666667,155.842105263158" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.6666666666667,155.842105263158"
+                    Point2="18.6666666666667,155.842105263158"
+                    Point3="18.6666666666667,159.842105263158" />
+                  <mssgle:LineSegment
+                    End="18.6666666666667,255.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-17.7580533854167,160.842105263158,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga de Dimensiones\Dimension Partes.Paths[OLE DB Command Output]"
+          TopLeft="89.1000000000001,453.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="126.333333333333,59.9999999999999"
+              Start="0,0"
+              End="126.333333333333,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5263157894736" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5263157894736"
+                    Point2="0,35.5263157894736"
+                    Point3="4,35.5263157894736" />
+                  <mssgle:LineSegment
+                    End="122.333333333333,35.5263157894736" />
+                  <mssgle:CubicBezierSegment
+                    Point1="122.333333333333,35.5263157894736"
+                    Point2="126.333333333333,35.5263157894736"
+                    Point3="126.333333333333,39.5263157894736" />
+                  <mssgle:LineSegment
+                    End="126.333333333333,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\Carga de Dimensiones\Dimension Partes\Derived Column 2"
+          TopLeft="153.3,615.099999999999" />
+        <EdgeLayout
+          Id="Package\Carga de Dimensiones\Dimension Partes.Paths[Union All Output 1]"
+          TopLeft="234.1,555.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="159.2,41.6"
+          Id="Package\Carga de Dimensiones\Dimension Partes\Insert Destination"
+          TopLeft="154.5,716.699999999999" />
+        <EdgeLayout
+          Id="Package\Carga de Dimensiones\Dimension Partes.Paths[Derived Column Output2]"
+          TopLeft="234.1,656.699999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\Carga de Dimensiones\Dimension Partes\OLE DB Command 1"
+          TopLeft="295.1,310.3" />
+        <EdgeLayout
+          Id="Package\Carga de Dimensiones\Dimension Partes.Paths[Changing Attribute Updates Output]"
+          TopLeft="284.1,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="99,59.9999999999999"
+              Start="0,0"
+              End="99,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.506329113924"
+                    Point2="0,20.506329113924"
+                    Point3="4,20.506329113924" />
+                  <mssgle:LineSegment
+                    End="95,20.506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="95,20.506329113924"
+                    Point2="99,20.506329113924"
+                    Point3="99,24.506329113924" />
+                  <mssgle:LineSegment
+                    End="99,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-29.03390625,25.506329113924,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Carga de Dimensiones\Dimension Partes\Slowly Changing Dimension">
     <Properties>
@@ -7837,210 +8037,10 @@ inner join dbo.Linea L on (L.ID_Linea=C.ID_Linea)</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Carga de Dimensiones\Dimension Clientes\Slowly Changing Dimension">
+    design-time-name="Package\Carga de Dimensiones\Dimension Partes\Fuente Partes">
     <Properties>
       <Property>
-        <Name>SCDMetadata</Name>
-        <Value
-          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionID&gt;{DA43E185-DCC1-447B-BED8-ECB2B2D21DD8}&lt;/ConnectionID&gt;
-  &lt;TableName&gt;[Dimension].[Clientes]&lt;/TableName&gt;
-  &lt;InputToColumnsCollection&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Cliente.Outputs[OLE DB Source Output].Columns[Correo_Electronico]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Correo_Electronico&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Cliente.Outputs[OLE DB Source Output].Columns[FechaCreacion]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;FechaCreacion&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Cliente.Outputs[OLE DB Source Output].Columns[FechaModificacion]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;FechaModificacion&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Cliente.Outputs[OLE DB Source Output].Columns[FechaNacimiento]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;FechaNacimiento&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Cliente.Outputs[OLE DB Source Output].Columns[Genero]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Genero&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Cliente.Outputs[OLE DB Source Output].Columns[ID_Cliente]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ID_Cliente&lt;/ColumnName&gt;
-      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
-      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Cliente.Outputs[OLE DB Source Output].Columns[PrimerApellidO]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;PrimerApellido&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Cliente.Outputs[OLE DB Source Output].Columns[PrimerNombre]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;PrimerNombre&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Cliente.Outputs[OLE DB Source Output].Columns[SegundoApellido]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;SegundoApellido&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Cliente.Outputs[OLE DB Source Output].Columns[SegundoNombre]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;SegundoNombre&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Cliente.Outputs[OLE DB Source Output].Columns[UsuarioCreacion]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;UsuarioCreacion&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Cliente.Outputs[OLE DB Source Output].Columns[UsuarioModificacion]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;UsuarioModificacion&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-  &lt;/InputToColumnsCollection&gt;
-  &lt;GeneratedComponentsIdentificationStrings&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 2&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
-  &lt;/GeneratedComponentsIdentificationStrings&gt;
-  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
-  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
-  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
-  &lt;CurrentIndicatorColumn /&gt;
-  &lt;InferredIndicatorColumn /&gt;
-  &lt;ValueCurrent /&gt;
-  &lt;ValueExpired /&gt;
-  &lt;StartDateColumn&gt;FechaInicioValidez&lt;/StartDateColumn&gt;
-  &lt;EndDateColumn&gt;FechaFinValidez&lt;/EndDateColumn&gt;
-  &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
-  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
-&lt;/SCDWizardMetadata&gt;</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Carga de Dimensiones\Dimension Geografia\Slowly Changing Dimension">
-    <Properties>
-      <Property>
-        <Name>SCDMetadata</Name>
-        <Value
-          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionID&gt;{DA43E185-DCC1-447B-BED8-ECB2B2D21DD8}&lt;/ConnectionID&gt;
-  &lt;TableName&gt;[Dimension].[Geografia]&lt;/TableName&gt;
-  &lt;InputToColumnsCollection&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[CodigoPostal]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;CodigoPostal&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[FechaCreacion]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;FechaCreacion&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[FechaModificacion]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;FechaModificacion&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[ID_Ciudad]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ID_Ciudad&lt;/ColumnName&gt;
-      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
-      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[ID_Pais]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ID_Pais&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[ID_Region]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ID_Region&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[NombreCiudad]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;NombreCiudad&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[NombrePais]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;NombrePais&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[NombreRegion]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;NombreRegion&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[UsuarioCreacion]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;UsuarioCreacion&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Fuente Geografia.Outputs[OLE DB Source Output].Columns[UsuarioModificacion]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;UsuarioModificacion&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-  &lt;/InputToColumnsCollection&gt;
-  &lt;GeneratedComponentsIdentificationStrings&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 2&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
-  &lt;/GeneratedComponentsIdentificationStrings&gt;
-  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
-  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
-  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
-  &lt;CurrentIndicatorColumn /&gt;
-  &lt;InferredIndicatorColumn /&gt;
-  &lt;ValueCurrent /&gt;
-  &lt;ValueExpired /&gt;
-  &lt;StartDateColumn&gt;FechaInicioValidez&lt;/StartDateColumn&gt;
-  &lt;EndDateColumn&gt;FechaFinValidez&lt;/EndDateColumn&gt;
-  &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
-  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
-&lt;/SCDWizardMetadata&gt;</Value>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

@@ -132,7 +132,7 @@ CREATE TABLE Detalle_orden
 
 insert into Detalle_orden (ID_Orden,ID_Partes,ID_Descuento,Cantidad) values (1,1,1,2)
 go
----inserciones preuba
+---inserciones prueba
 INSERT INTO Orden (ID_Cliente,ID_Ciudad,ID_StatusOrden,Total_Orden,Fecha_Orden) values(1,1,1,185425.00,getdate())
 INSERT INTO Orden (ID_Cliente,ID_Ciudad,ID_StatusOrden,Total_Orden,Fecha_Orden) values(1,1,1,180425.00,getdate())
 INSERT INTO Orden (ID_Cliente,ID_Ciudad,ID_StatusOrden,Total_Orden,Fecha_Orden) values(1,1,1,204145.00,getdate())
