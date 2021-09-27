@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "CuboRepuestos", "CuboRepuestos\CuboRepuestos.dwproj", "{9B03E383-B21E-4665-942F-52993C2AF365}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B03E383-B21E-4665-942F-52993C2AF365}.Development|Default.ActiveCfg = Development
+		{9B03E383-B21E-4665-942F-52993C2AF365}.Development|Default.Build.0 = Development
+		{9B03E383-B21E-4665-942F-52993C2AF365}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {02E2F990-6CCB-400B-8CCC-55737DBB45CE}
+	EndGlobalSection
+EndGlobal

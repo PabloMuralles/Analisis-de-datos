@@ -1,0 +1,1 @@
+El job tiro un error debido a que el procedimiento de llenado de fecha tiene errores, en vs a la hora de ejecutar el paquete tira el mismo error
