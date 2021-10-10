@@ -11,8 +11,8 @@
   DTS:LocaleID="22538"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{B1EEE9E8-F7C9-493A-AA3D-CC09C01876B6}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{7CC04F2A-D555-4628-8309-0C4886F64079}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -265,11 +265,13 @@
                           externalMetadataColumnId="Package\Carga de Fact\Cargar a Staging\Carga a Staging Orden.Inputs[OLE DB Destination Input].ExternalColumns[ID_StatusOrden]"
                           lineageId="Package\Carga de Fact\Cargar a Staging\Fuente Orden.Outputs[OLE DB Source Output].Columns[ID_StatusOrden]" />
                         <inputColumn
-                          refId="Package\Carga de Fact\Cargar a Staging\Carga a Staging Orden.Inputs[OLE DB Destination Input].Columns[ID_Partes]"
-                          cachedDataType="i4"
-                          cachedName="ID_Partes"
-                          externalMetadataColumnId="Package\Carga de Fact\Cargar a Staging\Carga a Staging Orden.Inputs[OLE DB Destination Input].ExternalColumns[ID_Partes]"
-                          lineageId="Package\Carga de Fact\Cargar a Staging\Fuente Orden.Outputs[OLE DB Source Output].Columns[ID_Partes]" />
+                          refId="Package\Carga de Fact\Cargar a Staging\Carga a Staging Orden.Inputs[OLE DB Destination Input].Columns[ID_Parte]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ID_Parte"
+                          externalMetadataColumnId="Package\Carga de Fact\Cargar a Staging\Carga a Staging Orden.Inputs[OLE DB Destination Input].ExternalColumns[ID_Parte]"
+                          lineageId="Package\Carga de Fact\Cargar a Staging\Fuente Orden.Outputs[OLE DB Source Output].Columns[ID_Parte]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -334,9 +336,11 @@
                           dataType="i4"
                           name="ID_StatusOrden" />
                         <externalMetadataColumn
-                          refId="Package\Carga de Fact\Cargar a Staging\Carga a Staging Orden.Inputs[OLE DB Destination Input].ExternalColumns[ID_Partes]"
-                          dataType="i4"
-                          name="ID_Partes" />
+                          refId="Package\Carga de Fact\Cargar a Staging\Carga a Staging Orden.Inputs[OLE DB Destination Input].ExternalColumns[ID_Parte]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ID_Parte" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -399,7 +403,7 @@
 	O.Fecha_Orden,
 	O.Fecha_Modificacion,
 	DO.ID_DetalleOrden,
-	DO.ID_Partes,
+	DO.ID_Parte,
 	DO.Cantidad,
 	D.ID_Descuento,
 	D.NombreDescuento,
@@ -572,13 +576,15 @@ where ((Fecha_Orden&gt;?) or (Fecha_Modificacion&gt;?))</property>
                           name="ID_StatusOrden"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Carga de Fact\Cargar a Staging\Fuente Orden.Outputs[OLE DB Source Output].Columns[ID_Partes]"
-                          dataType="i4"
+                          refId="Package\Carga de Fact\Cargar a Staging\Fuente Orden.Outputs[OLE DB Source Output].Columns[ID_Parte]"
+                          codePage="1252"
+                          dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Carga de Fact\Cargar a Staging\Fuente Orden.Outputs[OLE DB Source Output].ExternalColumns[ID_Partes]"
-                          lineageId="Package\Carga de Fact\Cargar a Staging\Fuente Orden.Outputs[OLE DB Source Output].Columns[ID_Partes]"
-                          name="ID_Partes"
+                          externalMetadataColumnId="Package\Carga de Fact\Cargar a Staging\Fuente Orden.Outputs[OLE DB Source Output].ExternalColumns[ID_Parte]"
+                          length="50"
+                          lineageId="Package\Carga de Fact\Cargar a Staging\Fuente Orden.Outputs[OLE DB Source Output].Columns[ID_Parte]"
+                          name="ID_Parte"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -644,9 +650,11 @@ where ((Fecha_Orden&gt;?) or (Fecha_Modificacion&gt;?))</property>
                           dataType="i4"
                           name="ID_StatusOrden" />
                         <externalMetadataColumn
-                          refId="Package\Carga de Fact\Cargar a Staging\Fuente Orden.Outputs[OLE DB Source Output].ExternalColumns[ID_Partes]"
-                          dataType="i4"
-                          name="ID_Partes" />
+                          refId="Package\Carga de Fact\Cargar a Staging\Fuente Orden.Outputs[OLE DB Source Output].ExternalColumns[ID_Parte]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ID_Parte" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -699,10 +707,12 @@ where ((Fecha_Orden&gt;?) or (Fecha_Modificacion&gt;?))</property>
                           precision="2"
                           scale="2" />
                         <outputColumn
-                          refId="Package\Carga de Fact\Cargar a Staging\Fuente Orden.Outputs[OLE DB Source Error Output].Columns[ID_Partes]"
-                          dataType="i4"
-                          lineageId="Package\Carga de Fact\Cargar a Staging\Fuente Orden.Outputs[OLE DB Source Error Output].Columns[ID_Partes]"
-                          name="ID_Partes" />
+                          refId="Package\Carga de Fact\Cargar a Staging\Fuente Orden.Outputs[OLE DB Source Error Output].Columns[ID_Parte]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Carga de Fact\Cargar a Staging\Fuente Orden.Outputs[OLE DB Source Error Output].Columns[ID_Parte]"
+                          name="ID_Parte" />
                         <outputColumn
                           refId="Package\Carga de Fact\Cargar a Staging\Fuente Orden.Outputs[OLE DB Source Error Output].Columns[Total_Orden]"
                           dataType="numeric"

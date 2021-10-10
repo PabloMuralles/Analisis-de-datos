@@ -185,7 +185,8 @@ alter table Fact.Orden add ID_Batch uniqueidentifier null
 alter table Fact.Orden add ID_SourceSystem varchar(50)
 -------------------------------------------------------------------------------------------------------
 --Dimension Partes
-alter table Dimension.Partes add ID_Partes [UDT_PK]
+--alter table Dimension.Partes add ID_Partes [UDT_PK]
+alter table Dimension.Partes add ID_Parte [UDT_VarcharCorto]
 alter table Dimension.Partes add ID_Linea [UDT_PK]
 alter table Dimension.Partes add ID_Categoria [UDT_PK]
 alter table Dimension.Partes add NombreParte [UDT_VarcharCorto]
