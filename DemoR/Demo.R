@@ -28,7 +28,7 @@ Temperaturas<-data.frame(Anios=c(2015,2016,2017,2018),
                          Invierno=c(5,8,7,10),
                          Primavera=c(10,12,15,13),
                          Verano=c(25,26,29,32),
-                         Otoño=c(13,14,12,10))
+                         Oto�o=c(13,14,12,10))
 
 Temperaturas
 Temperaturas$Invierno
@@ -52,7 +52,7 @@ TemperaturasRandom <-data.frame(Anios=(sample(c(2015:2018),20,replace = TRUE)),
                                 Invierno=rnorm(20,mean=2,sd=1),
                                 Primavera=rnorm(20,mean=15,sd=3),
                                 Verano=rnorm(20,mean=22,sd=4),
-                                Otoño=rnorm(20,mean=10,sd=2))
+                                Otono=rnorm(20,mean=10,sd=2))
 ##output es un data frame nuevo
 TemperaturasRandom %>% summarise(TemperaturaPromedio = mean(Invierno))
 TemperaturasRandom %>% group_by(Anios) %>% summarise(TemperaturaPromedio = mean(Invierno))
