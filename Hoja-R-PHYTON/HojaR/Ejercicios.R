@@ -35,16 +35,10 @@ ggplot(Df_CantidadFacultad, aes(x="", y=n, fill=NombreFacultad))+
 Df_PromedioNota2<- dfsql %>% group_by(NombreCarrera) %>% summarise(Promedio=mean(NotaTotal))
 
 ggplot(Df_PromedioNota2, aes(x=NombreCarrera, y=Promedio)) +
-  geom_bar(stat="identity")
+  geom_bar(stat="identity") +
+  coord_flip()
 
-data <- data.frame(x = LETTERS[1:5],   
-                   y = 1:5)
 
-ggplot(data, aes(x, y, fill = x)) +    
-  geom_bar(stat = "identity")
-
-ggplot(data, aes(x=x, y=y)) +
-  geom_bar(stat="identity")
 ##3
 Df_CantidadFacultadAno<-dfsql %>% count(Year)
 names(Df_CantidadFacultadAno)[2]<- "Total"
@@ -54,14 +48,6 @@ ggplot(data=Df_CantidadFacultadAno, aes(x=Year, y=Total, group=1)) +
   geom_line()+
   geom_point()
   
-##ejemplo
-df <- data.frame(dose=c("D0.5", "D1", "D2"),
-                 len=c(4.2, 10, 29.5))
-head(df)
 
-
-ggplot(data=df, aes(x=dose, y=len, group=1)) +
-  geom_line()+
-  geom_point()
 
 
