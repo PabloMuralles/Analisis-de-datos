@@ -61,3 +61,30 @@ plot(rules_high_lift, method = "graph", engine = "htmlwidget")
 
 
 ##################################################################################################################
+##conexion con db
+con <- dbConnect(odbc(),
+                 Driver = "SQL Server",
+                 Server = "DESKTOP-34T1EIQ",
+                 Database = "Admisiones")
+df<-dbGetQuery(con=con,"select * from VW_ResultadoCandidato")
+
+#validamos que soporte es bueno utilizarlo combiando elementos
+table(df$Genero,df$Resultado)#lo que encuentra es la frecuencia de cada uno de los elementos involugrados
+##esto srive para saber el soporte que voy a buscar
+##en este caso va devulver una matriz con eso se va viendo quien tiene el procentaje menor y ahí es sobre por donde puede ir el soporte
+##en este caso podriamos definir un soporte del 40%&
+table(df$NombreCarrera,df$Genero,df$Resultado,df$NombreCarrera)
+##se mira la frecuencia para darnos una idea dle soporte a probar 
+##para este caso si definimos una confinza del 50% significa que debe de parecer por lo menos 10,000 veces de las 20,000
+#debeomos de elimiar el id candidato ya que no es necesario
+df$ID_Candidato=NULL
+
+#definimos las reglas
+rules2 <- apriori(df, parameter = list(support=0.01, confidence=0.5, minlen=2)) #minlen es para definir el set de items 
+inspect(rules2)
+
+top3rules <- head(sort(rules2, by="lift"),3)
+inspect(top3rules)
+
+conf75rules <- rules2[quality(rules2)$confidence >0.75]
+inspect(conf75rules)
