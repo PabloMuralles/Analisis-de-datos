@@ -45,6 +45,11 @@ distPred1 <- predict(lmCaracteristicasCarro, testData)  # predecimos usanto test
 ##ggPredict(lmCaracteristicasCarro,se=TRUE,interactive=TRUE)
 ##scatterplot
 scatter.smooth(x=dfModify$Cantidad, y=dfModify$Marca+dfModify$Modelo+dfModify$Anio, main="Cantidad~Marca+Modelo+Anio")
+
+boxplot(dfModify$Cantidad, main="Cantidad", sub=paste("Outlier rows: ", boxplot.stats(dfModify$Cantidad)$out))
+boxplot(dfModify$Marca, main="Marca", sub=paste("Outlier rows: ", boxplot.stats(dfModify$Marca)$out))
+boxplot(dfModify$Modelo, main="Modelo", sub=paste("Outlier rows: ", boxplot.stats(dfModify$Modelo)$out))
+boxplot(dfModify$Anio, main="Año", sub=paste("Outlier rows: ", boxplot.stats(dfModify$Anio)$out))
 ###################################################################################################
 #lmPartes
 #creamos el modelo lineal de los descuentos
@@ -58,6 +63,7 @@ distPred2 <- predict(lmNombreParte, testData)  # predecimos usanto test data
 ##ggPredict(lmNombreParte,se=TRUE,interactive=TRUE)
 ##scatterplot
 scatter.smooth(x=dfModify$Cantidad, y=dfModify$NombreParte, main="Cantidad~NombreParte")
+boxplot(dfModify$NombreParte, main="Nombre Parte", sub=paste("Outlier rows: ", boxplot.stats(dfModify$NombreParte)$out))
 ###################################################################################################
 ##lmDescuento
 lmDescuento <- lm(Cantidad ~ NombreDescuento, data=trainingData)  
@@ -70,4 +76,5 @@ distPred3 <- predict(lmDescuento, testData)  # predecimos usanto test data
 ##ggPredict(lmNombreParte,se=TRUE,interactive=TRUE)
 ##scatterplot
 scatter.smooth(x=dfModify$Cantidad, y=dfModify$NombreDescuento, main="Cantidad~NombreDescuento")
+boxplot(dfModify$NombreDescuento, main="Nombre Descuento", sub=paste("Outlier rows: ", boxplot.stats(dfModify$NombreDescuento)$out))
 
